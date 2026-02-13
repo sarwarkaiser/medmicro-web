@@ -428,6 +428,75 @@ body {
     }
 }
 
+/* Footer */
+.app-footer {
+    background-color: white;
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-coffee {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #FFDD00;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.btn-coffee:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-coffee:active {
+    transform: translateY(0);
+}
+
+.footer-text {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.footer-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+.footer-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
     :root {
@@ -438,7 +507,12 @@ body {
         --border-color: #374151;
     }
 
-    .search-container, .tabs {
+    .search-container, .tabs, .app-footer {
         background-color: var(--card-bg);
+    }
+
+    .btn-coffee {
+        background-color: #FFDD00;
+        color: #000000;
     }
 }
