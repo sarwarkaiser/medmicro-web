@@ -7,6 +7,311 @@ let currentMedClass = 'all';
 let currentGuidelineCategory = '';
 let deferredPrompt = null;
 
+// Calculator scales and definitions
+const calcScales = {
+    phq9: [
+        { value: 0, label: 'Not at all (0)' },
+        { value: 1, label: 'Several days (1)' },
+        { value: 2, label: 'More than half the days (2)' },
+        { value: 3, label: 'Nearly every day (3)' }
+    ],
+    gad7: [
+        { value: 0, label: 'Not at all (0)' },
+        { value: 1, label: 'Several days (1)' },
+        { value: 2, label: 'More than half the days (2)' },
+        { value: 3, label: 'Nearly every day (3)' }
+    ],
+    likert0to4: [
+        { value: 0, label: '0' },
+        { value: 1, label: '1' },
+        { value: 2, label: '2' },
+        { value: 3, label: '3' },
+        { value: 4, label: '4' }
+    ],
+    likert0to3: [
+        { value: 0, label: '0' },
+        { value: 1, label: '1' },
+        { value: 2, label: '2' },
+        { value: 3, label: '3' }
+    ],
+    yesno: [
+        { value: 0, label: 'No (0)' },
+        { value: 1, label: 'Yes (1)' }
+    ],
+    oneToSeven: [
+        { value: 1, label: '1' },
+        { value: 2, label: '2' },
+        { value: 3, label: '3' },
+        { value: 4, label: '4' },
+        { value: 5, label: '5' },
+        { value: 6, label: '6' },
+        { value: 7, label: '7' }
+    ]
+};
+
+const calculators = [
+    {
+        id: 'phq9',
+        title: 'PHQ-9 Depression',
+        subtitle: '9 items | 0-3 each',
+        type: 'items',
+        scale: 'phq9',
+        items: [
+            { label: 'Little interest or pleasure in doing things' },
+            { label: 'Feeling down, depressed, or hopeless' },
+            { label: 'Trouble falling or staying asleep, or sleeping too much' },
+            { label: 'Feeling tired or having little energy' },
+            { label: 'Poor appetite or overeating' },
+            { label: 'Feeling bad about yourself or that you are a failure or have let yourself or your family down' },
+            { label: 'Trouble concentrating on things, such as reading or watching television' },
+            { label: 'Moving or speaking so slowly that other people could have noticed, or the opposite, being fidgety or restless' },
+            { label: 'Thoughts that you would be better off dead or of hurting yourself in some way' }
+        ],
+        interpretation: [
+            { min: 0, max: 4, label: 'None-minimal' },
+            { min: 5, max: 9, label: 'Mild' },
+            { min: 10, max: 14, label: 'Moderate' },
+            { min: 15, max: 19, label: 'Moderately severe' },
+            { min: 20, max: 27, label: 'Severe' }
+        ]
+    },
+    {
+        id: 'gad7',
+        title: 'GAD-7 Anxiety',
+        subtitle: '7 items | 0-3 each',
+        type: 'items',
+        scale: 'gad7',
+        items: [
+            { label: 'Feeling nervous, anxious, or on edge' },
+            { label: 'Not being able to stop or control worrying' },
+            { label: 'Worrying too much about different things' },
+            { label: 'Trouble relaxing' },
+            { label: 'Being so restless that it is hard to sit still' },
+            { label: 'Becoming easily annoyed or irritable' },
+            { label: 'Feeling afraid as if something awful might happen' }
+        ],
+        interpretation: [
+            { min: 0, max: 4, label: 'Minimal' },
+            { min: 5, max: 9, label: 'Mild' },
+            { min: 10, max: 14, label: 'Moderate' },
+            { min: 15, max: 21, label: 'Severe' }
+        ]
+    },
+    {
+        id: 'audit',
+        title: 'AUDIT (Alcohol Use)',
+        subtitle: '10 items | 0-4 each (Q9-10 use 0/2/4)',
+        type: 'items',
+        scale: 'likert0to4',
+        items: [
+            { label: 'How often do you have a drink containing alcohol?' },
+            { label: 'How many drinks containing alcohol do you have on a typical day when you are drinking?' },
+            { label: 'How often do you have six or more drinks on one occasion?' },
+            { label: 'How often during the last year have you found that you were not able to stop drinking once you had started?' },
+            { label: 'How often during the last year have you failed to do what was normally expected from you because of drinking?' },
+            { label: 'How often during the last year have you needed a first drink in the morning to get yourself going after a heavy drinking session?' },
+            { label: 'How often during the last year have you had a feeling of guilt or remorse after drinking?' },
+            { label: 'How often during the last year have you been unable to remember what happened the night before because of drinking?' },
+            {
+                label: 'Have you or someone else been injured as a result of your drinking?',
+                options: [
+                    { value: 0, label: '0' },
+                    { value: 2, label: '2' },
+                    { value: 4, label: '4' }
+                ]
+            },
+            {
+                label: 'Has a relative, friend, doctor, or other health worker been concerned about your drinking or suggested you cut down?',
+                options: [
+                    { value: 0, label: '0' },
+                    { value: 2, label: '2' },
+                    { value: 4, label: '4' }
+                ]
+            }
+        ],
+        interpretation: [
+            { min: 0, max: 7, label: 'Low risk' },
+            { min: 8, max: 14, label: 'Hazardous or harmful use' },
+            { min: 15, max: 40, label: 'Possible dependence' }
+        ],
+        note: 'Cutoffs vary by setting.'
+    },
+    {
+        id: 'pcptsd5',
+        title: 'PC-PTSD-5',
+        subtitle: '5 items | Yes/No',
+        type: 'items',
+        scale: 'yesno',
+        items: [
+            { label: 'In the past month, have you had nightmares about the event or thought about it when you did not want to?' },
+            { label: 'Tried hard not to think about the event or went out of your way to avoid situations that reminded you of it?' },
+            { label: 'Been constantly on guard, watchful, or easily startled?' },
+            { label: 'Felt numb or detached from people, activities, or your surroundings?' },
+            { label: 'Felt guilty or unable to stop blaming yourself or others for the event or its consequences?' }
+        ],
+        interpretation: [
+            { min: 0, max: 2, label: 'Negative screen' },
+            { min: 3, max: 5, label: 'Positive screen (3-4+ depending on setting)' }
+        ],
+        note: 'Cutpoint often 3 or 4 depending on setting.'
+    },
+    {
+        id: 'pcl5',
+        title: 'PCL-5 PTSD Checklist',
+        subtitle: '20 items | 0-4 each',
+        type: 'items',
+        scale: 'likert0to4',
+        items: Array.from({ length: 20 }, (_, i) => ({ label: `PCL-5 Item ${i + 1}` })),
+        interpretation: [
+            { min: 0, max: 30, label: 'Below common cutpoint' },
+            { min: 31, max: 80, label: 'At/above common cutpoint' }
+        ],
+        restrictedText: true,
+        note: 'Common cutpoint is 31-33; use official PCL-5 item text.'
+    },
+    {
+        id: 'bprs',
+        title: 'BPRS (Schizophrenia)',
+        subtitle: '18 items | 1-7 each',
+        type: 'items',
+        scale: 'oneToSeven',
+        items: [
+            { label: 'Somatic concern' },
+            { label: 'Anxiety' },
+            { label: 'Emotional withdrawal' },
+            { label: 'Conceptual disorganization' },
+            { label: 'Guilt feelings' },
+            { label: 'Tension' },
+            { label: 'Mannerisms and posturing' },
+            { label: 'Grandiosity' },
+            { label: 'Depressive mood' },
+            { label: 'Hostility' },
+            { label: 'Suspiciousness' },
+            { label: 'Hallucinatory behavior' },
+            { label: 'Motor retardation' },
+            { label: 'Uncooperativeness' },
+            { label: 'Unusual thought content' },
+            { label: 'Blunted affect' },
+            { label: 'Excitement' },
+            { label: 'Disorientation' }
+        ],
+        note: 'Scores 1-7 per item.'
+    },
+    {
+        id: 'ymrs',
+        title: 'Young Mania Rating Scale',
+        subtitle: '11 items | mixed scoring',
+        type: 'items',
+        items: [
+            { label: 'YMRS Item 1', max: 4 },
+            { label: 'YMRS Item 2', max: 4 },
+            { label: 'YMRS Item 3', max: 8 },
+            { label: 'YMRS Item 4', max: 8 },
+            { label: 'YMRS Item 5', max: 4 },
+            { label: 'YMRS Item 6', max: 4 },
+            { label: 'YMRS Item 7', max: 4 },
+            { label: 'YMRS Item 8', max: 8 },
+            { label: 'YMRS Item 9', max: 4 },
+            { label: 'YMRS Item 10', max: 4 },
+            { label: 'YMRS Item 11', max: 8 }
+        ],
+        restrictedText: true,
+        note: 'Use official YMRS item text.'
+    },
+    {
+        id: 'ybocs',
+        title: 'Y-BOCS (OCD Severity)',
+        subtitle: '10 items | 0-4 each',
+        type: 'items',
+        scale: 'likert0to4',
+        items: Array.from({ length: 10 }, (_, i) => ({ label: `Y-BOCS Item ${i + 1}` })),
+        interpretation: [
+            { min: 0, max: 7, label: 'Subclinical' },
+            { min: 8, max: 15, label: 'Mild' },
+            { min: 16, max: 23, label: 'Moderate' },
+            { min: 24, max: 31, label: 'Severe' },
+            { min: 32, max: 40, label: 'Extreme' }
+        ],
+        restrictedText: true,
+        note: 'Use licensed Y-BOCS item text.'
+    },
+    {
+        id: 'ciwa',
+        title: 'CIWA-Ar (Alcohol Withdrawal)',
+        subtitle: '10 items | mixed scoring',
+        type: 'items',
+        items: [
+            { label: 'CIWA-Ar Item 1', max: 7 },
+            { label: 'CIWA-Ar Item 2', max: 7 },
+            { label: 'CIWA-Ar Item 3', max: 7 },
+            { label: 'CIWA-Ar Item 4', max: 7 },
+            { label: 'CIWA-Ar Item 5', max: 7 },
+            { label: 'CIWA-Ar Item 6', max: 7 },
+            { label: 'CIWA-Ar Item 7', max: 7 },
+            { label: 'CIWA-Ar Item 8', max: 7 },
+            { label: 'CIWA-Ar Item 9', max: 7 },
+            { label: 'CIWA-Ar Item 10', max: 4 }
+        ],
+        interpretation: [
+            { min: 0, max: 8, label: 'Mild withdrawal' },
+            { min: 9, max: 15, label: 'Moderate withdrawal' },
+            { min: 16, max: 67, label: 'Severe withdrawal' }
+        ],
+        restrictedText: true,
+        note: 'Use official CIWA-Ar item text.'
+    },
+    {
+        id: 'bfcrs',
+        title: 'BFCRS (Catatonia)',
+        subtitle: '23 items | 0-3 each',
+        type: 'items',
+        scale: 'likert0to3',
+        items: Array.from({ length: 23 }, (_, i) => ({ label: `BFCRS Item ${i + 1}` })),
+        restrictedText: true,
+        note: 'Use official BFCRS item text.'
+    },
+    {
+        id: 'panss',
+        title: 'PANSS (Schizophrenia)',
+        subtitle: '30 items | 1-7 each',
+        type: 'items',
+        scale: 'oneToSeven',
+        items: Array.from({ length: 30 }, (_, i) => ({ label: `PANSS Item ${i + 1}` })),
+        restrictedText: true,
+        note: 'PANSS is licensed; use authorized item text.'
+    },
+    {
+        id: 'bmi',
+        title: 'BMI Calculator',
+        subtitle: 'Weight (kg) and Height (cm)',
+        type: 'bmi'
+    },
+    {
+        id: 'cssrs',
+        title: 'C-SSRS Screener',
+        subtitle: '6 items | Yes/No',
+        type: 'items',
+        scale: 'yesno',
+        items: [
+            { label: 'Wish to be dead' },
+            { label: 'Non-specific active suicidal thoughts' },
+            { label: 'Active suicidal ideation with any methods (not plan) without intent to act' },
+            { label: 'Active suicidal ideation with some intent to act, without specific plan' },
+            { label: 'Active suicidal ideation with specific plan and intent' },
+            { label: 'Suicidal behavior (actual, interrupted, or aborted attempt, or preparatory behavior)' }
+        ],
+        restrictedText: false,
+        note: 'Use official wording if required by your institution.'
+    },
+    {
+        id: 'moca',
+        title: 'MoCA',
+        subtitle: 'External tool (license required)',
+        type: 'external',
+        url: 'https://mocacognition.com/'
+    }
+];
+
 // Initialize app
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('MedMicro PWA initializing...');
@@ -54,6 +359,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Load data
     await loadMeds();
     await loadGuidelines();
+    renderCalculators();
 });
 
 // Tab switching
@@ -309,82 +615,208 @@ async function showCriteria(disorder) {
     }
 }
 
-// Calculator functions
-async function calculatePHQ9() {
-    const score = parseInt(document.getElementById('phq9-input').value);
-    const resultDiv = document.getElementById('phq9-result');
+// Calculator rendering
+function renderCalculators() {
+    const container = document.getElementById('calc-tools');
+    if (!container) return;
 
-    if (isNaN(score) || score < 0 || score > 27) {
-        resultDiv.innerHTML = '<span style="color: #ef4444;">Please enter a valid score (0-27)</span>';
-        resultDiv.classList.add('show');
-        return;
-    }
+    container.innerHTML = calculators.map(buildCalcCard).join('');
 
-    try {
-        const response = await fetch('/api/calc/phq9', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ score })
-        });
-        const data = await response.json();
+    calculators.forEach(calc => {
+        const card = container.querySelector(`[data-calc="${calc.id}"]`);
+        if (!card) return;
 
-        if (data.success) {
-            resultDiv.innerHTML = `
-                <strong>Score:</strong> ${data.data.score}/27<br>
-                <strong>Severity:</strong> ${data.data.interpretation}<br><br>
-                <div style="font-size: 0.75rem; color: #6b7280;">
-                    <strong>Ranges:</strong><br>
-                    0-4: None-minimal • 5-9: Mild<br>
-                    10-14: Moderate • 15-19: Moderately severe<br>
-                    20-27: Severe
-                </div>
-            `;
-            resultDiv.classList.add('show');
+        const resetBtn = card.querySelector('[data-reset]');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => resetCalc(calc.id));
         }
-    } catch (error) {
-        console.error('PHQ-9 calculation failed:', error);
+
+        if (calc.type === 'items') {
+            card.querySelectorAll('select[data-score]').forEach(select => {
+                select.addEventListener('change', () => updateCalc(calc.id));
+            });
+            updateCalc(calc.id);
+        }
+
+        if (calc.type === 'bmi') {
+            const button = card.querySelector('[data-action="bmi"]');
+            if (button) {
+                button.addEventListener('click', () => calculateBMI(calc.id));
+            }
+        }
+
+        const toggleBtn = card.querySelector('[data-toggle]');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => toggleCalc(calc.id));
+        }
+    });
+}
+
+function toggleCalc(calcId) {
+    const container = document.getElementById('calc-tools');
+    const card = document.querySelector(`[data-calc="${calcId}"]`);
+    if (!card) return;
+
+    const isOpen = card.classList.contains('open');
+    container.querySelectorAll('.calc-card.open').forEach(openCard => {
+        openCard.classList.remove('open');
+        const btn = openCard.querySelector('[data-toggle]');
+        if (btn) btn.textContent = 'Open';
+    });
+
+    if (!isOpen) {
+        card.classList.add('open');
+        const btn = card.querySelector('[data-toggle]');
+        if (btn) btn.textContent = 'Close';
     }
 }
 
-async function calculateGAD7() {
-    const score = parseInt(document.getElementById('gad7-input').value);
-    const resultDiv = document.getElementById('gad7-result');
-
-    if (isNaN(score) || score < 0 || score > 21) {
-        resultDiv.innerHTML = '<span style="color: #ef4444;">Please enter a valid score (0-21)</span>';
-        resultDiv.classList.add('show');
-        return;
-    }
-
-    try {
-        const response = await fetch('/api/calc/gad7', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ score })
-        });
-        const data = await response.json();
-
-        if (data.success) {
-            resultDiv.innerHTML = `
-                <strong>Score:</strong> ${data.data.score}/21<br>
-                <strong>Severity:</strong> ${data.data.interpretation}<br><br>
-                <div style="font-size: 0.75rem; color: #6b7280;">
-                    <strong>Ranges:</strong><br>
-                    0-4: Minimal • 5-9: Mild<br>
-                    10-14: Moderate • 15-21: Severe
+function buildCalcCard(calc) {
+    if (calc.type === 'external') {
+        return `
+            <div class="calc-card" data-calc="${calc.id}">
+                <div class="calc-summary">
+                    <div class="calc-summary-text">
+                        <h3>${calc.title}</h3>
+                        <p class="card-meta">${calc.subtitle}</p>
+                    </div>
+                    <a class="btn-primary" href="${calc.url}" target="_blank" rel="noopener">Open</a>
                 </div>
-            `;
-            resultDiv.classList.add('show');
-        }
-    } catch (error) {
-        console.error('GAD-7 calculation failed:', error);
+                <div class="calc-result show">Use the licensed external tool for item text and scoring.</div>
+            </div>
+        `;
     }
+
+    if (calc.type === 'bmi') {
+        return `
+            <div class="calc-card" data-calc="${calc.id}">
+                <div class="calc-summary">
+                    <div class="calc-summary-text">
+                        <h3>${calc.title}</h3>
+                        <p class="card-meta">${calc.subtitle}</p>
+                    </div>
+                    <button class="calc-toggle" data-toggle>Open</button>
+                </div>
+                <div class="calc-body">
+                    <input type="number" class="calc-input" data-field="weight" placeholder="Weight (kg)" step="0.1">
+                    <input type="number" class="calc-input" data-field="height" placeholder="Height (cm)">
+                    <div class="calc-actions">
+                        <button class="btn-primary" data-action="bmi">Calculate</button>
+                        <button class="btn-secondary" data-reset>Reset</button>
+                    </div>
+                    <div class="calc-result"></div>
+                </div>
+            </div>
+        `;
+    }
+
+    const badges = [];
+    if (calc.restrictedText) {
+        badges.push('<span class="badge warn">Licensed text</span>');
+        badges.push('<span class="badge warn">Placeholder items</span>');
+    }
+    if (calc.note) badges.push('<span class="badge lock">Note</span>');
+
+    return `
+        <div class="calc-card" data-calc="${calc.id}">
+            <div class="calc-summary">
+                <div class="calc-summary-text">
+                    <h3>${calc.title}</h3>
+                    <p class="card-meta">${calc.subtitle}</p>
+                    ${badges.length ? `<div class="calc-badges">${badges.join('')}</div>` : ''}
+                </div>
+                <button class="calc-toggle" data-toggle>Open</button>
+            </div>
+            <div class="calc-body">
+                <div class="calc-items">
+                    ${buildCalcItems(calc)}
+                </div>
+                <div class="calc-actions">
+                    <button class="btn-secondary" data-reset>Reset</button>
+                </div>
+                <div class="calc-result"></div>
+            </div>
+        </div>
+    `;
 }
 
-async function calculateBMI() {
-    const weight = parseFloat(document.getElementById('bmi-weight').value);
-    const height = parseFloat(document.getElementById('bmi-height').value);
-    const resultDiv = document.getElementById('bmi-result');
+function buildCalcItems(calc) {
+    return calc.items.map((item, index) => {
+        const options = buildCalcOptions(calc, item);
+        return `
+            <div class="calc-row">
+                <div class="calc-label">${index + 1}. ${item.label}</div>
+                <select class="calc-select" data-score>
+                    ${options}
+                </select>
+            </div>
+        `;
+    }).join('');
+}
+
+function buildCalcOptions(calc, item) {
+    const customOptions = item.options || (calc.scale ? calcScales[calc.scale] : null);
+    if (customOptions) {
+        return customOptions.map(opt => `<option value="${opt.value}">${opt.label}</option>`).join('');
+    }
+
+    const min = Number.isFinite(item.min) ? item.min : 0;
+    const max = Number.isFinite(item.max) ? item.max : 4;
+    const options = [];
+    for (let i = min; i <= max; i += 1) {
+        options.push(`<option value="${i}">${i}</option>`);
+    }
+    return options.join('');
+}
+
+function updateCalc(calcId) {
+    const calc = calculators.find(c => c.id === calcId);
+    const card = document.querySelector(`[data-calc="${calcId}"]`);
+    if (!calc || !card || calc.type !== 'items') return;
+
+    let total = 0;
+    card.querySelectorAll('select[data-score]').forEach(select => {
+        total += parseInt(select.value || '0', 10);
+    });
+
+    const result = card.querySelector('.calc-result');
+    if (!result) return;
+
+    let interpretationText = '';
+    if (calc.interpretation) {
+        const match = calc.interpretation.find(range => total >= range.min && total <= range.max);
+        if (match) interpretationText = match.label;
+    }
+
+    result.innerHTML = `
+        <strong>Total:</strong> ${total}${interpretationText ? `<br><strong>Severity:</strong> ${interpretationText}` : ''}
+        ${calc.note ? `<div style="margin-top: 0.5rem; color: var(--muted); font-size: 0.75rem;">${calc.note}</div>` : ''}
+    `;
+    result.classList.add('show');
+}
+
+function resetCalc(calcId) {
+    const card = document.querySelector(`[data-calc="${calcId}"]`);
+    if (!card) return;
+
+    card.querySelectorAll('select[data-score]').forEach(select => {
+        select.selectedIndex = 0;
+    });
+    card.querySelectorAll('input').forEach(input => {
+        input.value = '';
+    });
+    const result = card.querySelector('.calc-result');
+    if (result) result.classList.remove('show');
+    updateCalc(calcId);
+}
+
+function calculateBMI(calcId) {
+    const card = document.querySelector(`[data-calc="${calcId}"]`);
+    if (!card) return;
+
+    const weight = parseFloat(card.querySelector('[data-field="weight"]').value);
+    const height = parseFloat(card.querySelector('[data-field="height"]').value);
+    const resultDiv = card.querySelector('.calc-result');
 
     if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
         resultDiv.innerHTML = '<span style="color: #ef4444;">Please enter valid weight and height</span>';
@@ -392,31 +824,20 @@ async function calculateBMI() {
         return;
     }
 
-    try {
-        const response = await fetch('/api/calc/bmi', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ weight, height })
-        });
-        const data = await response.json();
+    const bmi = (weight / Math.pow(height / 100, 2));
+    let interpretation = '';
+    if (bmi < 18.5) interpretation = 'Underweight';
+    else if (bmi < 25) interpretation = 'Normal weight';
+    else if (bmi < 30) interpretation = 'Overweight';
+    else interpretation = 'Obese';
 
-        if (data.success) {
-            resultDiv.innerHTML = `
-                <strong>Weight:</strong> ${weight} kg<br>
-                <strong>Height:</strong> ${height} cm<br>
-                <strong>BMI:</strong> ${data.data.bmi}<br>
-                <strong>Category:</strong> ${data.data.interpretation}<br><br>
-                <div style="font-size: 0.75rem; color: #6b7280;">
-                    <strong>Categories:</strong><br>
-                    &lt;18.5: Underweight • 18.5-24.9: Normal<br>
-                    25-29.9: Overweight • ≥30: Obese
-                </div>
-            `;
-            resultDiv.classList.add('show');
-        }
-    } catch (error) {
-        console.error('BMI calculation failed:', error);
-    }
+    resultDiv.innerHTML = `
+        <strong>Weight:</strong> ${weight} kg<br>
+        <strong>Height:</strong> ${height} cm<br>
+        <strong>BMI:</strong> ${bmi.toFixed(1)}<br>
+        <strong>Category:</strong> ${interpretation}
+    `;
+    resultDiv.classList.add('show');
 }
 
 // Modal functions
