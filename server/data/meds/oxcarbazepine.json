@@ -1,0 +1,34 @@
+{
+  "name": "Oxcarbazepine",
+  "genericName": "oxcarbazepine",
+  "brandNames": ["Trileptal", "Oxtellar XR"],
+  "tags": ["Mood Stabilizer", "Anticonvulsant"],
+  "dosing": {
+    "adult_acute": "300 mg BID, increase by 300-600 mg/day every 3-7 days",
+    "adult_maintenance": "900-2400 mg/day divided BID",
+    "notes": "Keto-analogue of carbamazepine; better tolerated; less drug interactions; no autoinduction; no need for level monitoring",
+    "canadian_clinical": {
+      "starting_dose": "300 mg BID",
+      "titration_schedule": "Increase by 300-600 mg/day every 3-7 days",
+      "max_dose_evidence": "2400 mg/day",
+      "max_dose_practice": "1800-2400 mg/day divided BID",
+      "inpatient_strategy": "Start 300-600 mg BID; increase by 300-600 mg every 3-7 days to 1200-1800 mg",
+      "outpatient_strategy": "Start 300 mg BID; increase weekly; generally better tolerated than carbamazepine"
+    }
+  },
+  "warnings": [
+    "Black box warning: Serious dermatologic reactions (SJS, TEN) - cross-reactivity with carbamazepine in ~25-30%",
+    "HLA-B*1502 screening recommended in Asian patients (same as carbamazepine)",
+    "Hyponatremia (more common than carbamazepine) - monitor sodium, especially in elderly",
+    "No autoinduction (unlike carbamazepine)",
+    "Fewer drug interactions than carbamazepine but still moderate CYP3A4 inducer",
+    "May reduce efficacy of oral contraceptives",
+    "No need for routine blood level monitoring"
+  ],
+  "cautions": {
+    "renal": "CrCl <30: Start at 50% dose and titrate slowly; monitor for fluid/electrolyte disturbances",
+    "hepatic": "Use with caution; not recommended in severe impairment",
+    "pregnancy": "Pregnancy Category C; limited data; likely similar risks to carbamazepine"
+  },
+  "citations": ["CANMAT Bipolar Guidelines", "Trileptal FDA Label", "APA Guidelines"]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Haloperidol",
+  "genericName": "haloperidol",
+  "brandNames": ["Haldol", "Haldol Decanoate"],
+  "tags": ["Antipsychotic", "Typical Antipsychotic", "High-Potency FGA"],
+  "dosing": {
+    "adult_acute": "Oral: 0.5-5 mg BID-TID; IM: 2-5 mg every 4-8 hours PRN; LAI: 10-20x daily oral dose monthly",
+    "adult_maintenance": "Oral: 2-20 mg/day divided; LAI: 50-200 mg IM every 4 weeks",
+    "notes": "High-potency typical antipsychotic; high EPS risk; oral, IM, IV, and LAI formulations available",
+    "canadian_clinical": {
+      "starting_dose": "Oral: 0.5-2 mg BID; IM acute agitation: 2-5 mg; LAI: 10-15x daily dose monthly",
+      "titration_schedule": "Oral: Increase by 0.5-2 mg every 2-3 days; LAI: Adjust monthly based on response",
+      "max_dose_evidence": "30 mg/day (oral); higher doses no added benefit",
+      "max_dose_practice": "20 mg/day typical max; rarely exceed; LAI: 100-200 mg monthly",
+      "inpatient_strategy": "Agitation: 2-5 mg IM q4-8h PRN; Maintenance: 5-15 mg/day oral divided",
+      "outpatient_strategy": "Start 1-2 mg BID; titrate slowly; consider LAI for adherence"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased mortality in elderly with dementia-related psychosis",
+    "HIGH EPS risk (dystonia, parkinsonism, akathisia) - prophylactic anticholinergics often needed",
+    "Tardive dyskinesia risk increases with duration of exposure",
+    "QTc prolongation - especially IV route; ECG monitoring recommended",
+    "Neuroleptic malignant syndrome (rare but life-threatening)",
+    "Minimal anticholinergic, antihistaminic, or alpha-blocking effects",
+    "Lower metabolic effects than atypical antipsychotics"
+  ],
+  "cautions": {
+    "renal": "Use with caution; no specific dose adjustment",
+    "hepatic": "Use with caution; reduce dose in hepatic impairment",
+    "pregnancy": "Pregnancy Category C; crosses placenta; EPS risk in neonate"
+  },
+  "citations": ["APA Schizophrenia Guidelines", "Haldol FDA Label", "NICE Guidelines"]
+}

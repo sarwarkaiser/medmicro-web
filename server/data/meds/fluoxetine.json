@@ -1,0 +1,32 @@
+{
+  "name": "Fluoxetine",
+  "genericName": "fluoxetine",
+  "brandNames": ["Prozac", "Sarafem"],
+  "tags": ["SSRI", "Antidepressant"],
+  "dosing": {
+    "adult_acute": "20 mg once daily, may increase after 1 week",
+    "adult_maintenance": "20-80 mg/day (MDD), 60-80 mg/day (OCD, Bulimia)",
+    "notes": "Can be dosed once daily due to long half-life; weekly formulation available (Prozac Weekly 90mg)",
+    "canadian_clinical": {
+      "starting_dose": "10-20 mg once daily in the morning",
+      "titration_schedule": "Increase by 10-20 mg every 1-2 weeks based on response",
+      "max_dose_evidence": "80 mg/day (FDA max for MDD/OCD)",
+      "max_dose_practice": "80 mg/day; rarely exceed due to long half-life",
+      "inpatient_strategy": "Start 20 mg daily; can increase to 40-60 mg within 2-3 weeks for severe depression",
+      "outpatient_strategy": "Start 10-20 mg; slow titration recommended; reassess at 4-6 weeks"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased suicidal thinking in children/adolescents/young adults",
+    "Long half-life (4-6 days) means 5+ weeks to steady state; drug interactions persist weeks after discontinuation",
+    "Significant CYP2D6 inhibitor - check drug interactions carefully",
+    "Lower risk of discontinuation syndrome due to long half-life",
+    "QTc prolongation risk at higher doses"
+  ],
+  "cautions": {
+    "renal": "No adjustment needed",
+    "hepatic": "Reduce dose or increase dosing interval in cirrhosis",
+    "pregnancy": "Pregnancy Category C; some data suggests increased risk of cardiac defects; weigh risks/benefits"
+  },
+  "citations": ["APA Practice Guidelines for MDD (2010)", "CANMAT Depression Guidelines (2016)", "Prozac FDA Label"]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Citalopram",
+  "genericName": "citalopram",
+  "brandNames": ["Celexa"],
+  "tags": ["SSRI", "Antidepressant"],
+  "dosing": {
+    "adult_acute": "20 mg once daily, may increase after 1 week",
+    "adult_maintenance": "20-40 mg/day",
+    "notes": "Max 40 mg/day due to QTc prolongation; max 20 mg/day in elderly >60 years; take in morning or evening",
+    "canadian_clinical": {
+      "starting_dose": "10-20 mg once daily",
+      "titration_schedule": "Increase to 40 mg after 1 week if tolerated",
+      "max_dose_evidence": "40 mg/day (FDA max due to QTc concerns)",
+      "max_dose_practice": "40 mg/day; 20 mg/day if >60 years or CYP2C19 poor metabolizers",
+      "inpatient_strategy": "Start 20 mg; can increase to 40 mg after 1 week; monitor ECG if cardiac risk factors",
+      "outpatient_strategy": "Start 10-20 mg; increase to 40 mg after 1-2 weeks; obtain baseline ECG if indicated"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased suicidal thinking in children/adolescents/young adults",
+    "QTc prolongation - FDA max dose 40 mg/day (20 mg if >60 years, poor CYP2C19 metabolizers, or hepatic impairment)",
+    "ECG monitoring recommended at higher doses or with cardiac risk factors",
+    "Generally well-tolerated with fewer drug interactions than other SSRIs",
+    "Minimal CYP enzyme inhibition"
+  ],
+  "cautions": {
+    "renal": "No adjustment for mild-moderate impairment; use caution in severe",
+    "hepatic": "Max 20 mg/day in hepatic impairment",
+    "pregnancy": "Pregnancy Category C; consider escitalopram as alternative"
+  },
+  "citations": ["FDA Celexa Safety Alert (2011)", "APA Guidelines", "Celexa FDA Label"]
+}

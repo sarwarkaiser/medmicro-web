@@ -1,0 +1,33 @@
+{
+  "name": "Paroxetine",
+  "genericName": "paroxetine",
+  "brandNames": ["Paxil", "Paxil CR"],
+  "tags": ["SSRI", "Antidepressant"],
+  "dosing": {
+    "adult_acute": "20 mg once daily, may increase weekly",
+    "adult_maintenance": "20-50 mg/day (MDD), 40-60 mg/day (OCD, Panic, Social Anxiety)",
+    "notes": "Take in morning; CR formulation allows once-daily dosing; most anticholinergic SSRI",
+    "canadian_clinical": {
+      "starting_dose": "10-20 mg once daily in the morning",
+      "titration_schedule": "Increase by 10 mg weekly based on response and tolerability",
+      "max_dose_evidence": "50 mg/day (MDD), 60 mg/day (OCD/Panic)",
+      "max_dose_practice": "60 mg/day; rarely exceed due to side effects",
+      "inpatient_strategy": "Start 20 mg; can increase to 40 mg within 2 weeks",
+      "outpatient_strategy": "Start 10-20 mg; titrate slowly; higher discontinuation syndrome risk - taper carefully"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased suicidal thinking in children/adolescents/young adults",
+    "HIGHEST risk of discontinuation syndrome among SSRIs - requires slow taper",
+    "Strong CYP2D6 inhibitor - multiple drug interactions",
+    "Most anticholinergic SSRI - dry mouth, constipation, urinary retention",
+    "Weight gain more common than other SSRIs",
+    "Pregnancy Category D - avoid in pregnancy (cardiac malformations)"
+  ],
+  "cautions": {
+    "renal": "CrCl <30: Start 10 mg, max 40 mg/day",
+    "hepatic": "Start 10 mg/day in severe hepatic impairment",
+    "pregnancy": "Category D - avoid; associated with cardiac malformations; consider switching before conception"
+  },
+  "citations": ["APA Practice Guidelines for MDD", "CANMAT 2016", "Paxil FDA Label"]
+}

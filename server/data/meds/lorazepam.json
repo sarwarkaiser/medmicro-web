@@ -1,0 +1,34 @@
+{
+  "name": "Lorazepam",
+  "genericName": "lorazepam",
+  "brandNames": ["Ativan"],
+  "tags": ["Benzodiazepine", "Anxiolytic"],
+  "dosing": {
+    "adult_acute": "Anxiety: 0.5-2 mg BID-TID PRN; Agitation: 1-2 mg IM/IV q4-6h PRN",
+    "adult_maintenance": "2-6 mg/day divided BID-TID for short-term use only",
+    "notes": "Intermediate-acting; no active metabolites; IM/IV/SL/PO formulations; preferred in elderly and hepatic impairment",
+    "canadian_clinical": {
+      "starting_dose": "0.5-1 mg BID-TID PRN",
+      "titration_schedule": "Titrate to minimum effective dose; avoid regular dosing if possible",
+      "max_dose_evidence": "10 mg/day",
+      "max_dose_practice": "4-6 mg/day; use lowest effective dose for shortest duration",
+      "inpatient_strategy": "Agitation: 1-2 mg IM/PO q4-6h PRN; Alcohol withdrawal: Higher doses protocol-driven",
+      "outpatient_strategy": "0.5-1 mg PRN for anxiety; educate on dependence risk; time-limited use"
+    }
+  },
+  "warnings": [
+    "Black box warning: (1) Concomitant use with opioids may result in respiratory depression, coma, death; (2) Abuse, misuse, addiction; (3) Dependence and withdrawal",
+    "Physical dependence develops with regular use (can occur within 2-4 weeks)",
+    "Withdrawal can be life-threatening - taper slowly",
+    "Cognitive impairment, sedation, falls (especially elderly)",
+    "Paradoxical disinhibition possible",
+    "Avoid in pregnancy (cleft palate risk) and breastfeeding",
+    "Should be SHORT-TERM use only (<2-4 weeks); not for chronic anxiety management"
+  ],
+  "cautions": {
+    "renal": "No adjustment needed (no active metabolites) - preferred benzodiazepine in renal impairment",
+    "hepatic": "No adjustment (glucuronidation, no active metabolites) - preferred benzodiazepine in hepatic impairment",
+    "pregnancy": "Pregnancy Category D - avoid; associated with cleft palate"
+  },
+  "citations": ["Ativan FDA Label", "NICE Anxiety Guidelines", "Benzodiazepine Deprescribing Guidelines"]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Ziprasidone",
+  "genericName": "ziprasidone",
+  "brandNames": ["Geodon"],
+  "tags": ["Antipsychotic", "Atypical Antipsychotic"],
+  "dosing": {
+    "adult_acute": "20 mg BID with food; IM: 10-20 mg every 2-4 hours (max 40 mg/day)",
+    "adult_maintenance": "40-80 mg BID with food (typical); max 160 mg/day",
+    "notes": "MUST take with food (500 calories) for absorption; BID dosing required; weight neutral; IM available for acute agitation",
+    "canadian_clinical": {
+      "starting_dose": "20 mg BID with food",
+      "titration_schedule": "Increase to 40 mg BID on day 2-3; then increase by 20 mg BID every 2-3 days",
+      "max_dose_evidence": "160 mg/day (80 mg BID)",
+      "max_dose_practice": "160 mg/day (80 mg BID); rarely go to max due to QTc concerns",
+      "inpatient_strategy": "Start 40 mg BID with food; IM 10-20 mg for agitation (switch to oral within 3 days)",
+      "outpatient_strategy": "Start 20 mg BID with meals; titrate to 40-80 mg BID based on response"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased mortality in elderly with dementia-related psychosis",
+    "QTc prolongation - obtain baseline ECG and monitor; avoid if QTc >500 ms or with other QTc-prolonging drugs",
+    "MUST take with food (≥500 calories) - bioavailability reduced by 50% on empty stomach",
+    "BID dosing required (short half-life)",
+    "Weight neutral - excellent for metabolic concerns",
+    "Minimal prolactin elevation",
+    "Sedation and orthostatic hypotension (especially during titration)",
+    "Akathisia may occur"
+  ],
+  "cautions": {
+    "renal": "No adjustment needed; use caution in severe impairment",
+    "hepatic": "Use caution; consider lower doses",
+    "pregnancy": "Pregnancy Category C; limited data"
+  },
+  "citations": ["Geodon FDA Label", "APA Guidelines", "CANMAT Guidelines"]
+}

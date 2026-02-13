@@ -1,0 +1,34 @@
+{
+  "name": "Carbamazepine",
+  "genericName": "carbamazepine",
+  "brandNames": ["Tegretol", "Carbatrol", "Equetro"],
+  "tags": ["Mood Stabilizer", "Anticonvulsant"],
+  "dosing": {
+    "adult_acute": "200 mg BID, increase by 200 mg/day every 3-7 days",
+    "adult_maintenance": "600-1200 mg/day divided BID-QID; target level 4-12 mcg/mL",
+    "notes": "Autoinduction occurs (metabolism increases over 3-5 weeks); monitor levels; extended-release formulations allow BID dosing",
+    "canadian_clinical": {
+      "starting_dose": "100-200 mg BID",
+      "titration_schedule": "Increase by 200 mg/day every 3-7 days based on response and levels",
+      "max_dose_evidence": "1600 mg/day; therapeutic level 4-12 mcg/mL",
+      "max_dose_practice": "1200-1600 mg/day divided; levels guide dosing",
+      "inpatient_strategy": "Start 200 mg BID; increase by 200 mg every 3-5 days; monitor levels weekly initially",
+      "outpatient_strategy": "Start 100-200 mg BID; slow titration; check levels after 2-4 weeks (post-autoinduction)"
+    }
+  },
+  "warnings": [
+    "Black box warnings: (1) Serious dermatologic reactions (SJS, TEN) - higher risk in HLA-B*1502 carriers (Asian ancestry); (2) Aplastic anemia and agranulocytosis (rare)",
+    "HLA-B*1502 screening recommended before starting in patients of Asian ancestry",
+    "Autoinduction: Metabolism increases over 3-5 weeks - may need dose increases",
+    "Multiple drug interactions: Strong CYP3A4 inducer - reduces levels of oral contraceptives, many psychotropics",
+    "Hyponatremia (especially elderly) - monitor sodium",
+    "CBC monitoring: Baseline, then periodically (leukopenia, thrombocytopenia)",
+    "Teratogenic: Neural tube defects - avoid in pregnancy if possible"
+  ],
+  "cautions": {
+    "renal": "Use with caution; dose adjustment may be needed",
+    "hepatic": "Contraindicated in severe hepatic impairment; monitor LFTs",
+    "pregnancy": "Pregnancy Category D - teratogenic; folic acid supplementation if used"
+  },
+  "citations": ["APA Bipolar Guidelines", "CANMAT Guidelines", "Tegretol FDA Label"]
+}

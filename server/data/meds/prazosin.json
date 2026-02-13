@@ -1,0 +1,33 @@
+{
+  "name": "Prazosin",
+  "genericName": "prazosin",
+  "brandNames": ["Minipress"],
+  "tags": ["Alpha-1 Blocker", "Antihypertensive", "PTSD"],
+  "dosing": {
+    "adult_acute": "PTSD nightmares: 1 mg at bedtime",
+    "adult_maintenance": "PTSD: 2-15 mg at bedtime (typical 5-10 mg); Hypertension: 2-20 mg/day divided BID-TID",
+    "notes": "Off-label for PTSD nightmares (evidence mixed); alpha-1 blocker; take at bedtime; first-dose hypotension risk",
+    "canadian_clinical": {
+      "starting_dose": "1 mg at bedtime (PTSD)",
+      "titration_schedule": "Increase by 1-2 mg every 3-7 days; titrate to effect",
+      "max_dose_evidence": "15-20 mg qHS (PTSD off-label); 20 mg/day (hypertension)",
+      "max_dose_practice": "10-15 mg qHS for PTSD nightmares",
+      "inpatient_strategy": "Start 1-2 mg qHS; increase every 3-7 days; monitor BP",
+      "outpatient_strategy": "Start 1 mg qHS; warn about first-dose hypotension; titrate weekly to 5-10 mg"
+    }
+  },
+  "warnings": [
+    "First-dose hypotension - take at bedtime; advise to sit/lie down if dizziness",
+    "Orthostatic hypotension - falls risk (especially elderly)",
+    "Mixed evidence for PTSD nightmares (some negative trials; may help some patients)",
+    "Dizziness, drowsiness common",
+    "Generally well-tolerated; non-sedating alpha-blocker",
+    "Monitor blood pressure regularly"
+  ],
+  "cautions": {
+    "renal": "Use with caution; start with lower dose",
+    "hepatic": "Use with caution; reduce dose in hepatic impairment",
+    "pregnancy": "Pregnancy Category C; limited data"
+  },
+  "citations": ["VA/DoD PTSD Guidelines", "Minipress FDA Label", "Cochrane Review (Prazosin for PTSD)"]
+}

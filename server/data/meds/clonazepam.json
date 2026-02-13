@@ -1,0 +1,34 @@
+{
+  "name": "Clonazepam",
+  "genericName": "clonazepam",
+  "brandNames": ["Klonopin", "Rivotril"],
+  "tags": ["Benzodiazepine", "Anxiolytic", "Anticonvulsant"],
+  "dosing": {
+    "adult_acute": "Panic disorder: 0.25 mg BID; Seizures: 0.5 mg TID",
+    "adult_maintenance": "Panic: 1-4 mg/day divided BID; Seizures: 0.5-20 mg/day divided",
+    "notes": "Long-acting benzodiazepine; FDA-approved for panic disorder; ODT formulation available; higher potency",
+    "canadian_clinical": {
+      "starting_dose": "0.25-0.5 mg BID",
+      "titration_schedule": "Increase by 0.25-0.5 mg every 3 days",
+      "max_dose_evidence": "4 mg/day (panic); 20 mg/day (seizures)",
+      "max_dose_practice": "2-4 mg/day for panic; avoid chronic use",
+      "inpatient_strategy": "Start 0.5-1 mg BID-TID; higher doses for akathisia or agitation",
+      "outpatient_strategy": "Start 0.25-0.5 mg BID; titrate slowly; time-limited use; taper plan from onset"
+    }
+  },
+  "warnings": [
+    "Black box warning: (1) Concomitant use with opioids may result in respiratory depression, coma, death; (2) Abuse, misuse, addiction; (3) Dependence and withdrawal",
+    "Long half-life (30-40 hours) - accumulation risk",
+    "Physical dependence with regular use - difficult withdrawal",
+    "Withdrawal seizures possible - MUST taper slowly (10% dose reduction every 1-2 weeks)",
+    "Cognitive impairment, memory issues, sedation",
+    "HIGH abuse potential - Schedule IV controlled substance",
+    "Should be SHORT-TERM use only; avoid long-term except seizure disorders"
+  ],
+  "cautions": {
+    "renal": "Use with caution; metabolites may accumulate",
+    "hepatic": "Reduce dose in hepatic impairment; increased sensitivity",
+    "pregnancy": "Pregnancy Category D - avoid; teratogenic risk"
+  },
+  "citations": ["Klonopin FDA Label", "APA Panic Disorder Guidelines", "Ashton Manual (Benzodiazepine Withdrawal)"]
+}

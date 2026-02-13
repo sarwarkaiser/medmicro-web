@@ -1,0 +1,34 @@
+{
+  "name": "Asenapine",
+  "genericName": "asenapine",
+  "brandNames": ["Saphris", "Secuado"],
+  "tags": ["Antipsychotic", "Atypical Antipsychotic"],
+  "dosing": {
+    "adult_acute": "Sublingual: 5 mg BID; Transdermal patch: 3.8 mg/24h",
+    "adult_maintenance": "Sublingual: 5-10 mg BID; Transdermal: 3.8-7.6 mg/24h",
+    "notes": "Sublingual ONLY - do NOT swallow; avoid eating/drinking 10 min after dose; transdermal patch alternative for adherence",
+    "canadian_clinical": {
+      "starting_dose": "SL: 5 mg BID; Patch: 3.8 mg/24h",
+      "titration_schedule": "SL: Can increase to 10 mg BID after 1 week; Patch: Increase to 5.7 mg or 7.6 mg weekly",
+      "max_dose_evidence": "SL: 10 mg BID; Patch: 7.6 mg/24h",
+      "max_dose_practice": "SL: 10 mg BID; Patch: 7.6 mg daily",
+      "inpatient_strategy": "SL: Start 5-10 mg BID; ensure sublingual administration technique",
+      "outpatient_strategy": "SL: 5 mg BID; increase to 10 mg BID if needed; Patch: Consider for adherence issues"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased mortality in elderly with dementia-related psychosis",
+    "SUBLINGUAL ONLY - swallowing reduces bioavailability by 50%; no eating/drinking for 10 minutes after dose",
+    "Oral hypoesthesia (numbness) common with sublingual formulation",
+    "Weight gain and metabolic effects (moderate risk)",
+    "Sedation common - especially with initial dosing",
+    "QTc prolongation possible",
+    "Transdermal patch alternative for adherence (application site reactions possible)"
+  ],
+  "cautions": {
+    "renal": "No adjustment needed",
+    "hepatic": "Contraindicated in severe hepatic impairment (Child-Pugh C)",
+    "pregnancy": "Pregnancy Category C; limited data"
+  },
+  "citations": ["Saphris FDA Label", "APA Bipolar Guidelines", "CANMAT Guidelines"]
+}

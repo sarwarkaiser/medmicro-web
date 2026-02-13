@@ -1,0 +1,34 @@
+{
+  "name": "Paliperidone",
+  "genericName": "paliperidone",
+  "brandNames": ["Invega", "Invega Sustenna", "Invega Trinza"],
+  "tags": ["Antipsychotic", "Atypical Antipsychotic"],
+  "dosing": {
+    "adult_acute": "Oral: 6 mg once daily in AM; LAI: 234 mg IM day 1, 156 mg IM day 8, then monthly",
+    "adult_maintenance": "Oral: 3-12 mg/day; LAI monthly: 117-234 mg IM monthly; LAI q3mo: 273-819 mg IM every 3 months",
+    "notes": "Active metabolite of risperidone; extended-release tablet (do NOT crush/chew); LAI formulations for adherence",
+    "canadian_clinical": {
+      "starting_dose": "Oral: 6 mg once daily; LAI: Initiation per product monograph",
+      "titration_schedule": "Oral: Adjust by 3 mg every ≥5 days; LAI: Standard loading regimen",
+      "max_dose_evidence": "Oral: 12 mg/day; LAI: 234 mg monthly",
+      "max_dose_practice": "Oral: 12 mg/day; some use 15 mg off-label",
+      "inpatient_strategy": "Oral: Start 6 mg AM; can increase to 9-12 mg within 1 week if tolerated",
+      "outpatient_strategy": "Oral: 3-6 mg AM; LAI preferred for maintenance to ensure adherence"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased mortality in elderly with dementia-related psychosis",
+    "EPS and tardive dyskinesia risk (similar to risperidone)",
+    "Hyperprolactinemia (dose-dependent) - can cause galactorrhea, amenorrhea, sexual dysfunction",
+    "QTc prolongation - use caution with other QTc-prolonging agents",
+    "Metabolic effects: weight gain, hyperglycemia, dyslipidemia (moderate risk)",
+    "Do NOT crush or chew ER tablets - will cause dose dumping",
+    "Renally eliminated - dose adjustment required in renal impairment"
+  ],
+  "cautions": {
+    "renal": "CrCl 50-79: Max 6 mg/day; CrCl 10-49: Max 3 mg/day; CrCl <10: Not recommended; LAI formulations contraindicated if CrCl <50",
+    "hepatic": "No adjustment needed for mild-moderate; use caution in severe",
+    "pregnancy": "Pregnancy Category C; crosses placenta; neonatal EPS risk"
+  },
+  "citations": ["APA Schizophrenia Guidelines", "Invega FDA Label", "CANMAT Guidelines"]
+}

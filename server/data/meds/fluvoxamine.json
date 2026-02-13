@@ -1,0 +1,32 @@
+{
+  "name": "Fluvoxamine",
+  "genericName": "fluvoxamine",
+  "brandNames": ["Luvox", "Luvox CR"],
+  "tags": ["SSRI", "Antidepressant"],
+  "dosing": {
+    "adult_acute": "50 mg at bedtime, increase by 50 mg every 4-7 days",
+    "adult_maintenance": "100-300 mg/day (OCD); 100-250 mg/day (MDD)",
+    "notes": "Divide doses >100 mg/day (BID); CR formulation allows once-daily dosing; take at bedtime to minimize daytime sedation",
+    "canadian_clinical": {
+      "starting_dose": "50 mg at bedtime",
+      "titration_schedule": "Increase by 50 mg every 4-7 days; divide BID when >100 mg/day",
+      "max_dose_evidence": "300 mg/day",
+      "max_dose_practice": "300 mg/day; rarely used at max dose due to sedation and GI effects",
+      "inpatient_strategy": "Start 50 mg qHS; increase to 150-200 mg within 2 weeks as tolerated",
+      "outpatient_strategy": "Start 50 mg qHS; slow titration; monitor for sedation and nausea"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased suicidal thinking in children/adolescents/young adults",
+    "Strong CYP1A2 and CYP2C19 inhibitor - MULTIPLE significant drug interactions (clozapine, olanzapine, theophylline, warfarin)",
+    "More sedating than other SSRIs - bedtime dosing preferred",
+    "Higher GI side effects (nausea) than other SSRIs",
+    "Less commonly prescribed due to drug interactions and side effect profile"
+  ],
+  "cautions": {
+    "renal": "No specific adjustment, use caution",
+    "hepatic": "Start with lower dose, titrate slowly in hepatic impairment",
+    "pregnancy": "Pregnancy Category C; limited data available"
+  },
+  "citations": ["APA OCD Guidelines", "CANMAT Guidelines", "Luvox FDA Label"]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Bupropion",
+  "genericName": "bupropion",
+  "brandNames": ["Wellbutrin", "Wellbutrin SR", "Wellbutrin XL", "Zyban"],
+  "tags": ["NDRI", "Antidepressant", "Smoking Cessation"],
+  "dosing": {
+    "adult_acute": "IR: 100 mg BID; SR: 150 mg once daily; XL: 150 mg once daily",
+    "adult_maintenance": "IR: 300 mg/day (100 mg TID); SR: 300-400 mg/day (150 mg BID); XL: 300-450 mg/day once daily",
+    "notes": "Do NOT exceed 450 mg/day (XL) or 400 mg/day (SR) due to seizure risk; avoid bedtime dosing (activating)",
+    "canadian_clinical": {
+      "starting_dose": "XL: 150 mg once daily in morning; SR: 150 mg once daily",
+      "titration_schedule": "XL: Increase to 300 mg after 3-4 days; can increase to 450 mg after 4 weeks if needed",
+      "max_dose_evidence": "450 mg/day (XL formulation); 400 mg/day (SR)",
+      "max_dose_practice": "450 mg XL daily; ensure no single dose >150 mg (IR), >200 mg (SR), or >450 mg (XL)",
+      "inpatient_strategy": "Start XL 150 mg AM; increase to 300 mg after 3-7 days; good for patients with fatigue, hypersomnia",
+      "outpatient_strategy": "Start XL 150 mg AM; reassess at 4 weeks before increasing; useful for SSRI augmentation or sexual dysfunction"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased suicidal thinking in children/adolescents/young adults; neuropsychiatric symptoms with smoking cessation",
+    "SEIZURE RISK: Dose-dependent (0.4% at ≤450 mg/day); avoid in seizure disorders, eating disorders, abrupt benzodiazepine/alcohol withdrawal",
+    "Do NOT use in bulimia or anorexia nervosa (increased seizure risk)",
+    "Contraindicated with MAOIs (14-day washout required)",
+    "Can cause activation, anxiety, insomnia - avoid evening doses",
+    "No sexual dysfunction or weight gain (advantageous over SSRIs)"
+  ],
+  "cautions": {
+    "renal": "Consider dose reduction in severe impairment (CrCl <30); use caution",
+    "hepatic": "Max 75 mg/day (IR), 100 mg/day (SR), or 150 mg every other day (XL) in severe hepatic cirrhosis",
+    "pregnancy": "Pregnancy Category C; some data suggests no increased malformation risk"
+  },
+  "citations": ["APA MDD Guidelines", "CANMAT 2016", "Wellbutrin FDA Label"]
+}

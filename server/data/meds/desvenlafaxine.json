@@ -1,0 +1,32 @@
+{
+  "name": "Desvenlafaxine",
+  "genericName": "desvenlafaxine",
+  "brandNames": ["Pristiq", "Khedezla"],
+  "tags": ["SNRI", "Antidepressant"],
+  "dosing": {
+    "adult_acute": "50 mg once daily",
+    "adult_maintenance": "50 mg/day",
+    "notes": "Active metabolite of venlafaxine; minimal benefit from doses >50 mg; take with or without food",
+    "canadian_clinical": {
+      "starting_dose": "50 mg once daily",
+      "titration_schedule": "Can increase to 100 mg after 1 week if needed, but limited additional efficacy",
+      "max_dose_evidence": "100 mg/day (no additional benefit shown above 50 mg)",
+      "max_dose_practice": "50 mg/day (most patients); 100 mg occasionally used but not recommended",
+      "inpatient_strategy": "Start 50 mg daily; minimal need for titration",
+      "outpatient_strategy": "50 mg once daily; reassess at 4-6 weeks; limited evidence for dose increases"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased suicidal thinking in children/adolescents/young adults",
+    "Discontinuation syndrome - taper slowly despite shorter half-life than venlafaxine",
+    "Blood pressure increases (dose-dependent) - monitor BP",
+    "Less drug interactions than venlafaxine (not metabolized by CYP2D6)",
+    "Minimal evidence for superiority over venlafaxine; more expensive"
+  ],
+  "cautions": {
+    "renal": "CrCl 30-50: Max 50 mg/day; CrCl <30: Max 50 mg every other day or 25 mg/day",
+    "hepatic": "Max 100 mg/day (no dose adjustment for mild-moderate); use caution in severe",
+    "pregnancy": "Pregnancy Category C; consider risks/benefits"
+  },
+  "citations": ["FDA Pristiq Label", "CANMAT Guidelines", "APA Guidelines"]
+}

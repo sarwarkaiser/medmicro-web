@@ -1,0 +1,34 @@
+{
+  "name": "Lurasidone",
+  "genericName": "lurasidone",
+  "brandNames": ["Latuda"],
+  "tags": ["Antipsychotic", "Atypical Antipsychotic"],
+  "dosing": {
+    "adult_acute": "Schizophrenia: 40 mg once daily; Bipolar depression: 20 mg once daily",
+    "adult_maintenance": "Schizophrenia: 40-160 mg/day; Bipolar depression: 20-120 mg/day",
+    "notes": "MUST take with food (≥350 calories) - absorption increased 2-fold; take with evening meal to minimize daytime sedation",
+    "canadian_clinical": {
+      "starting_dose": "Schizophrenia: 40 mg with food; Bipolar depression: 20 mg with food",
+      "titration_schedule": "Can increase after 1 week; adjust weekly by 20-40 mg",
+      "max_dose_evidence": "160 mg/day (schizophrenia); 120 mg/day (bipolar depression)",
+      "max_dose_practice": "160 mg/day with food",
+      "inpatient_strategy": "Start 40-80 mg with dinner; increase to target within 1-2 weeks",
+      "outpatient_strategy": "Start 20-40 mg with dinner; titrate based on response; excellent for bipolar depression"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased mortality in elderly with dementia-related psychosis",
+    "MUST take with ≥350 calories - absorption dramatically reduced on empty stomach",
+    "Lower metabolic risk compared to olanzapine/quetiapine - weight neutral in many patients",
+    "Minimal prolactin elevation",
+    "Akathisia (10-15%) - most common side effect",
+    "Somnolence - take at bedtime with food",
+    "FDA-approved for bipolar depression (not just schizophrenia)"
+  ],
+  "cautions": {
+    "renal": "CrCl 30-49: Max 80 mg/day; CrCl <30: Max 40 mg/day",
+    "hepatic": "Moderate (Child-Pugh B): Max 80 mg; Severe (Child-Pugh C): Max 40 mg",
+    "pregnancy": "Pregnancy Category B; limited data"
+  },
+  "citations": ["APA Bipolar Guidelines", "Latuda FDA Label", "CANMAT Bipolar Guidelines"]
+}

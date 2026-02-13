@@ -1,0 +1,35 @@
+{
+  "name": "Clozapine",
+  "genericName": "clozapine",
+  "brandNames": ["Clozaril", "FazaClo", "Versacloz"],
+  "tags": ["Antipsychotic", "Atypical Antipsychotic"],
+  "dosing": {
+    "adult_acute": "12.5 mg once or twice daily, increase by 25-50 mg/day",
+    "adult_maintenance": "300-450 mg/day (range 150-900 mg/day)",
+    "notes": "GOLD STANDARD for treatment-resistant schizophrenia; REMS program required (ANC monitoring); divide BID or TID",
+    "canadian_clinical": {
+      "starting_dose": "12.5 mg once daily or BID",
+      "titration_schedule": "Increase by 25-50 mg/day; target 300-450 mg within 2-3 weeks",
+      "max_dose_evidence": "900 mg/day",
+      "max_dose_practice": "600-900 mg/day; some use up to 1200 mg in treatment-resistant cases",
+      "inpatient_strategy": "Start 12.5 mg BID; increase by 25-50 mg/day; can reach 300-400 mg within 2 weeks",
+      "outpatient_strategy": "Slower titration (12.5-25 mg every 3-7 days); monitor for orthostasis, sedation; ANC monitoring mandatory"
+    }
+  },
+  "warnings": [
+    "Black box warnings: (1) Agranulocytosis (1-2%) - requires ANC monitoring via REMS program; (2) Orthostatic hypotension/bradycardia/syncope; (3) Falls; (4) Seizures (dose-dependent); (5) Myocarditis; (6) Increased mortality in elderly with dementia-related psychosis",
+    "REMS program MANDATORY: ANC monitoring weekly x6 months, then biweekly x6 months, then monthly",
+    "Discontinue if ANC <1000 (general population) or <1500 (benign ethnic neutropenia)",
+    "Seizure risk: 1-2% at 300 mg, 3-4% at 600 mg, 5% at 900 mg - consider prophylactic valproate",
+    "Myocarditis (especially first month) - monitor for chest pain, tachycardia, fever",
+    "Significant metabolic effects: weight gain, diabetes, dyslipidemia",
+    "Hypersalivation (80%) - especially at night; can use anticholinergics or alpha-2 agonists",
+    "Constipation can be severe - aggressive bowel regimen needed"
+  ],
+  "cautions": {
+    "renal": "No specific adjustment but use caution",
+    "hepatic": "Use with caution; reduce dose in hepatic impairment",
+    "pregnancy": "Pregnancy Category B; limited data; potential benefit may outweigh risk in treatment-resistant cases"
+  },
+  "citations": ["APA Schizophrenia Guidelines", "NICE Psychosis Guidelines", "Clozaril REMS Program", "Kane et al. 1988"]
+}

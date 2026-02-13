@@ -1,0 +1,33 @@
+{
+  "name": "Buspirone",
+  "genericName": "buspirone",
+  "brandNames": ["BuSpar"],
+  "tags": ["Anxiolytic", "5-HT1A Partial Agonist"],
+  "dosing": {
+    "adult_acute": "7.5 mg BID (or 5 mg TID)",
+    "adult_maintenance": "15-30 mg/day divided BID-TID; max 60 mg/day",
+    "notes": "Non-benzodiazepine anxiolytic; 2-4 weeks for full effect; no abuse potential; no withdrawal; must be dosed regularly (not PRN)",
+    "canadian_clinical": {
+      "starting_dose": "5 mg TID or 7.5 mg BID",
+      "titration_schedule": "Increase by 5 mg/day every 2-3 days to 15-30 mg/day",
+      "max_dose_evidence": "60 mg/day",
+      "max_dose_practice": "30-60 mg/day divided BID-TID",
+      "inpatient_strategy": "Start 7.5-15 mg BID; increase every 2-3 days to 30-45 mg/day",
+      "outpatient_strategy": "Start 7.5 mg BID; increase weekly; counsel that effect takes 2-4 weeks (not immediate like benzodiazepines)"
+    }
+  },
+  "warnings": [
+    "Delayed onset (2-4 weeks) - NOT for acute anxiety or PRN use",
+    "NOT a benzodiazepine - will NOT prevent benzodiazepine withdrawal",
+    "Generally well-tolerated; side effects: dizziness, headache, nausea",
+    "No abuse potential, no dependence, no withdrawal",
+    "May cause serotonin syndrome if combined with other serotonergic agents",
+    "Does NOT help panic attacks or acute anxiety - for generalized anxiety only"
+  ],
+  "cautions": {
+    "renal": "Reduce dose by 25-50% in severe renal impairment",
+    "hepatic": "Reduce dose by 25-50% in hepatic impairment",
+    "pregnancy": "Pregnancy Category B; limited data but likely lower risk than benzodiazepines"
+  },
+  "citations": ["BuSpar FDA Label", "CANMAT Anxiety Guidelines", "NICE GAD Guidelines"]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Hydroxyzine",
+  "genericName": "hydroxyzine",
+  "brandNames": ["Vistaril", "Atarax"],
+  "tags": ["Anxiolytic", "Antihistamine"],
+  "dosing": {
+    "adult_acute": "Anxiety: 25-50 mg TID-QID PRN",
+    "adult_maintenance": "50-100 mg QID for anxiety (max 400 mg/day)",
+    "notes": "Non-controlled anxiolytic; antihistamine; sedating; can be used PRN; no abuse potential; alternative to benzodiazepines",
+    "canadian_clinical": {
+      "starting_dose": "25 mg TID PRN or 25-50 mg qHS",
+      "titration_schedule": "Increase to 50-100 mg TID-QID as needed",
+      "max_dose_evidence": "400 mg/day",
+      "max_dose_practice": "100-200 mg/day divided for anxiety; higher doses for severe anxiety or agitation",
+      "inpatient_strategy": "25-100 mg TID-QID PRN for agitation or anxiety; IM formulation available",
+      "outpatient_strategy": "Start 25 mg TID PRN; can use regularly or PRN; good benzodiazepine alternative"
+    }
+  },
+  "warnings": [
+    "QTc prolongation - use caution with other QTc-prolonging agents",
+    "Anticholinergic effects - dry mouth, urinary retention, constipation (less than TCAs)",
+    "Sedation - advise caution with driving",
+    "No abuse potential or dependence - excellent benzodiazepine alternative",
+    "Can be used PRN (unlike buspirone)",
+    "Generally well-tolerated; safe in most populations"
+  ],
+  "cautions": {
+    "renal": "Reduce dose by 50% in renal impairment",
+    "hepatic": "Reduce dose in hepatic impairment",
+    "pregnancy": "Pregnancy Category C; avoid in first trimester; safe option later in pregnancy"
+  },
+  "citations": ["Vistaril FDA Label", "NICE Anxiety Guidelines", "Benzodiazepine Alternatives Review"]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Trazodone",
+  "genericName": "trazodone",
+  "brandNames": ["Desyrel", "Oleptro"],
+  "tags": ["Antidepressant", "SARI", "Hypnotic"],
+  "dosing": {
+    "adult_acute": "Depression: 150 mg/day divided; Insomnia: 25-100 mg at bedtime",
+    "adult_maintenance": "Depression: 300-600 mg/day divided BID-TID; Insomnia: 50-100 mg qHS",
+    "notes": "Most commonly used OFF-LABEL for insomnia (25-100 mg); antidepressant doses much higher (300-600 mg); take with food to enhance absorption",
+    "canadian_clinical": {
+      "starting_dose": "Depression: 50-100 mg BID-TID; Insomnia: 25-50 mg qHS",
+      "titration_schedule": "Depression: Increase by 50 mg/day every 3-4 days; Insomnia: Titrate to effect (usually 50-100 mg)",
+      "max_dose_evidence": "600 mg/day (outpatient); 800 mg/day (inpatient)",
+      "max_dose_practice": "400-600 mg/day for depression; 100-150 mg for insomnia",
+      "inpatient_strategy": "Depression: Start 50-100 mg BID-TID; increase to 300-400 mg within 1-2 weeks",
+      "outpatient_strategy": "Insomnia: Start 25-50 mg qHS; Depression: Start 50-100 mg BID, slow titration"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased suicidal thinking in children/adolescents/young adults",
+    "PRIAPISM: Rare but serious (1 in 6000) - advise patients to seek immediate care for prolonged erection >4 hours",
+    "Orthostatic hypotension - risk falls in elderly",
+    "Sedation - useful for insomnia but can cause daytime drowsiness",
+    "QTc prolongation - use caution with other QTc-prolonging drugs",
+    "Serotonin syndrome risk when combined with other serotonergic agents"
+  ],
+  "cautions": {
+    "renal": "No specific adjustment but use caution",
+    "hepatic": "Use caution; reduced clearance in cirrhosis",
+    "pregnancy": "Pregnancy Category C; limited data"
+  },
+  "citations": ["APA Guidelines", "CANMAT Guidelines", "Desyrel FDA Label"]
+}

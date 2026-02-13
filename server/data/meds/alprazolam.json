@@ -1,0 +1,34 @@
+{
+  "name": "Alprazolam",
+  "genericName": "alprazolam",
+  "brandNames": ["Xanax", "Xanax XR"],
+  "tags": ["Benzodiazepine", "Anxiolytic"],
+  "dosing": {
+    "adult_acute": "IR: 0.25-0.5 mg TID PRN; XR: 0.5-1 mg once daily",
+    "adult_maintenance": "IR: 0.5-4 mg/day divided TID-QID; XR: 3-6 mg once daily",
+    "notes": "Short-acting; rapid onset; high potency; FDA-approved for panic disorder and GAD; XR formulation available",
+    "canadian_clinical": {
+      "starting_dose": "IR: 0.25-0.5 mg TID PRN; XR: 0.5 mg once daily",
+      "titration_schedule": "Increase by 0.25-0.5 mg every 3 days if needed",
+      "max_dose_evidence": "10 mg/day (panic disorder)",
+      "max_dose_practice": "4 mg/day typical; higher doses in panic disorder",
+      "inpatient_strategy": "0.5-1 mg TID-QID PRN for acute anxiety; avoid long-term",
+      "outpatient_strategy": "Start 0.25-0.5 mg BID-TID PRN; time-limited; establish taper plan upfront"
+    }
+  },
+  "warnings": [
+    "Black box warning: (1) Concomitant use with opioids may result in respiratory depression, coma, death; (2) Abuse, misuse, addiction; (3) Dependence and withdrawal",
+    "SHORT half-life (6-12 hours) - multiple daily doses needed; interdose withdrawal",
+    "HIGH abuse potential - most commonly misused benzodiazepine",
+    "Physical dependence develops rapidly (within weeks)",
+    "Withdrawal can be severe and protracted - MUST taper slowly",
+    "Rebound anxiety common between doses",
+    "AVOID as first-line - use SSRIs for chronic anxiety management"
+  ],
+  "cautions": {
+    "renal": "Use with caution; metabolites may accumulate",
+    "hepatic": "Reduce dose in hepatic impairment; avoid in severe cirrhosis",
+    "pregnancy": "Pregnancy Category D - avoid; teratogenic risk"
+  },
+  "citations": ["Xanax FDA Label", "NICE Anxiety Guidelines", "Benzodiazepine Deprescribing Algorithm"]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Mirtazapine",
+  "genericName": "mirtazapine",
+  "brandNames": ["Remeron", "Remeron SolTab"],
+  "tags": ["Antidepressant", "NaSSA"],
+  "dosing": {
+    "adult_acute": "15 mg at bedtime",
+    "adult_maintenance": "15-45 mg/day at bedtime",
+    "notes": "Take at bedtime; sedation paradoxically DECREASES at higher doses (antihistamine effects less prominent); orally disintegrating tablets available",
+    "canadian_clinical": {
+      "starting_dose": "15 mg at bedtime",
+      "titration_schedule": "Increase by 15 mg every 1-2 weeks based on response",
+      "max_dose_evidence": "45 mg/day",
+      "max_dose_practice": "45 mg/day; some use 60 mg off-label but no additional evidence",
+      "inpatient_strategy": "Start 15-30 mg qHS; useful for depression with insomnia, poor appetite, or agitation",
+      "outpatient_strategy": "Start 7.5-15 mg qHS; titrate based on response; excellent for sleep and appetite stimulation"
+    }
+  },
+  "warnings": [
+    "Black box warning: Increased suicidal thinking in children/adolescents/young adults",
+    "Significant sedation and weight gain (H1 antagonism)",
+    "Increased appetite - useful in anorexia/cachexia but problematic in obesity",
+    "Lower doses MORE sedating (15 mg > 30 mg > 45 mg for sedation)",
+    "Rare: Agranulocytosis - monitor for fever, sore throat, infection (discontinue if suspected)",
+    "Generally well-tolerated; minimal sexual dysfunction"
+  ],
+  "cautions": {
+    "renal": "Use with caution; clearance reduced 30% in CrCl <40",
+    "hepatic": "Use with caution; clearance reduced 30% in hepatic impairment",
+    "pregnancy": "Pregnancy Category C; limited data available"
+  },
+  "citations": ["APA Guidelines", "CANMAT Guidelines", "Remeron FDA Label"]
+}
