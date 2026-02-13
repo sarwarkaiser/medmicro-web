@@ -1,0 +1,29 @@
+{
+    "name": "Aripiprazole",
+    "genericName": "Aripiprazole (Abilify)",
+    "tags": [
+        "Antipsychotic",
+        "SGA",
+        "Augmentation"
+    ],
+    "dosing": {
+        "adult_acute": "Schizophrenia: 10-15 mg/day. Bipolar mania: 15 mg/day. Augmentation: 2-15 mg/day",
+        "adult_maintenance": "10-30 mg/day for psychosis. 2-10 mg/day for augmentation",
+        "notes": "Partial D2 agonist. Can be activating. LAI available."
+    },
+    "cautions": {
+        "renal": "No adjustment needed",
+        "hepatic": "No adjustment needed",
+        "pregnancy": "Cat C - Consider alternatives"
+    },
+    "warnings": [
+        "Akathisia (most common SE)",
+        "Lower metabolic risk vs other SGAs",
+        "Compulsive behaviors (rare - gambling, eating)",
+        "Can cause insomnia or activation"
+    ],
+    "citations": [
+        "CANMAT Depression 2016 (augmentation)",
+        "APA Schizophrenia 2020"
+    ]
+}

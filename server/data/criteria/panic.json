@@ -1,0 +1,29 @@
+{
+    "disorder": "Panic Disorder",
+    "code": "F41.0",
+    "criteria": [
+        "A. Recurrent unexpected panic attacks (abrupt surge of intense fear/discomfort, peaks within minutes, with 4+ of the following):",
+        "  1. Palpitations, pounding heart, accelerated heart rate",
+        "  2. Sweating",
+        "  3. Trembling or shaking",
+        "  4. Sensations of shortness of breath or smothering",
+        "  5. Feelings of choking",
+        "  6. Chest pain or discomfort",
+        "  7. Nausea or abdominal distress",
+        "  8. Feeling dizzy, unsteady, lightheaded, or faint",
+        "  9. Chills or heat sensations",
+        "  10. Paresthesias",
+        "  11. Derealization or depersonalization",
+        "  12. Fear of losing control or 'going crazy'",
+        "  13. Fear of dying",
+        "",
+        "B. At least one attack followed by 1 month+ of one or both:",
+        "  1. Persistent concern/worry about additional attacks or their consequences",
+        "  2. Significant maladaptive change in behavior related to the attacks",
+        "",
+        "C. Not attributable to substances or another medical condition",
+        "",
+        "D. Not better explained by another mental disorder"
+    ],
+    "specifiers": []
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Sertraline",
+    "genericName": "Zoloft",
+    "tags": [
+        "SSRI",
+        "depression",
+        "anxiety",
+        "ocd"
+    ],
+    "dosing": {
+        "adult_acute": "50-200 mg/day",
+        "adult_maintenance": "50-200 mg/day",
+        "notes": "Take with food.",
+        "canadian_clinical": {
+            "starting_dose": "25-50 mg/day (start 25mg for anxiety/panic)",
+            "titration_schedule": "Increase by 25-50mg every 1-2 weeks.",
+            "inpatient_strategy": "Start 50mg. Increase to 100mg after 5 days if tolerated.",
+            "outpatient_strategy": "Start 25mg x 1 week, then 50mg. Review in 4 weeks.",
+            "max_dose_evidence": "200 mg/day",
+            "max_dose_practice": "250-300 mg/day (OCD cases, off-label)."
+        }
+    },
+    "cautions": {
+        "renal": "No adjustment.",
+        "hepatic": "Reduce dose or frequency.",
+        "pregnancy": "Generally considered first-line SSRI for pregnancy/breastfeeding."
+    },
+    "warnings": [
+        "GI Upset (Nausea/Diarrhea)",
+        "Sexual Dysfunction",
+        "Initial anxiety increase"
+    ],
+    "citations": [
+        "CANMAT Depression 2016",
+        "CIPRA"
+    ]
+}

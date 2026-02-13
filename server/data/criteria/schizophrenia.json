@@ -1,0 +1,27 @@
+{
+    "disorder": "Schizophrenia",
+    "code": "F20.x",
+    "criteria": [
+        "A. Two (or more) of the following, each present for significant portion of time during 1-month period (at least one must be 1, 2, or 3):",
+        "  1. Delusions",
+        "  2. Hallucinations",
+        "  3. Disorganized speech",
+        "  4. Grossly disorganized or catatonic behavior",
+        "  5. Negative symptoms (diminished emotional expression, avolition)",
+        "",
+        "B. Level of functioning markedly below prior level (or failure to achieve expected level if onset in childhood/adolescence)",
+        "",
+        "C. Continuous signs of disturbance persist for at least 6 months (must include at least 1 month of Criterion A symptoms)",
+        "",
+        "D. Schizoaffective disorder and depressive/bipolar with psychotic features ruled out",
+        "",
+        "E. Not attributable to substances or another medical condition",
+        "",
+        "F. If autism or communication disorder present, prominent delusions/hallucinations must also be present for at least 1 month"
+    ],
+    "specifiers": [
+        "First episode vs Multiple episodes",
+        "With catatonia",
+        "Current severity rating"
+    ]
+}

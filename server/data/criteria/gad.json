@@ -1,0 +1,27 @@
+{
+    "disorder": "Generalized Anxiety Disorder",
+    "code": "F41.1",
+    "criteria": [
+        "A. Excessive anxiety and worry about various events/activities, occurring more days than not for at least 6 months",
+        "",
+        "B. Difficult to control the worry",
+        "",
+        "C. Anxiety/worry associated with 3+ of the following:",
+        "  1. Restlessness or feeling keyed up/on edge",
+        "  2. Being easily fatigued",
+        "  3. Difficulty concentrating or mind going blank",
+        "  4. Irritability",
+        "  5. Muscle tension",
+        "  6. Sleep disturbance",
+        "",
+        "D. Causes clinically significant distress or impairment",
+        "",
+        "E. Not attributable to substances or another medical condition",
+        "",
+        "F. Not better explained by another mental disorder"
+    ],
+    "specifiers": [
+        "With excessive worry about minor matters",
+        "Duration: at least 6 months required"
+    ]
+}

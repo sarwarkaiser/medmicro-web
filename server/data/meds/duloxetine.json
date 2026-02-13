@@ -1,0 +1,30 @@
+{
+    "name": "Duloxetine",
+    "genericName": "Duloxetine (Cymbalta)",
+    "tags": [
+        "SNRI",
+        "Antidepressant",
+        "Pain"
+    ],
+    "dosing": {
+        "adult_acute": "Depression/Anxiety: 60 mg daily. Pain: 30-60 mg daily",
+        "adult_maintenance": "60 mg/day (can go up to 120 mg/day)",
+        "notes": "Take with food. Do not open capsules. Caps: 20, 30, 60 mg."
+    },
+    "cautions": {
+        "renal": "Avoid in CrCl <30. Use caution in CrCl 30-80.",
+        "hepatic": "CONTRAINDICATED in hepatic impairment",
+        "pregnancy": "Cat C - Limited data, neonatal effects possible"
+    },
+    "warnings": [
+        "Hepatotoxicity - monitor LFTs, avoid in liver disease",
+        "Discontinuation syndrome - must taper",
+        "May increase BP and HR",
+        "Urinary hesitancy/retention possible",
+        "Helpful for chronic pain, fibromyalgia"
+    ],
+    "citations": [
+        "CANMAT Depression 2016",
+        "NICE GAD 2011"
+    ]
+}

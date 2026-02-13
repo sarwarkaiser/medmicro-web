@@ -1,0 +1,29 @@
+{
+    "name": "Escitalopram",
+    "genericName": "Escitalopram (Lexapro)",
+    "tags": [
+        "SSRI",
+        "Antidepressant",
+        "Anxiety"
+    ],
+    "dosing": {
+        "adult_acute": "10 mg daily, may increase to 20 mg/day",
+        "adult_maintenance": "10-20 mg/day",
+        "notes": "Max 20 mg/day. 10 mg often sufficient. Can take AM or PM."
+    },
+    "cautions": {
+        "renal": "No adjustment for mild-moderate. Use caution in severe.",
+        "hepatic": "10 mg max in hepatic impairment",
+        "pregnancy": "Cat C - Consider risks/benefits"
+    },
+    "warnings": [
+        "Suicidality in young adults",
+        "QT prolongation (dose-related)",
+        "Avoid with MAOIs (14-day washout)",
+        "Insomnia or somnolence possible"
+    ],
+    "citations": [
+        "NICE GAD 2011",
+        "CANMAT Depression 2016"
+    ]
+}

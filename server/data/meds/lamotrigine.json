@@ -1,0 +1,36 @@
+{
+    "name": "Lamotrigine",
+    "genericName": "Lamictal",
+    "tags": [
+        "mood stabilizer",
+        "bipolar depression",
+        "anticonvulsant"
+    ],
+    "dosing": {
+        "adult_acute": "Not for acute mania (slow titration)",
+        "adult_maintenance": "100-200 mg/day",
+        "notes": "Slow titration mandatory to prevent SJS.",
+        "canadian_clinical": {
+            "starting_dose": "25 mg/day",
+            "titration_schedule": "Weeks 1-2: 25mg/day. Weeks 3-4: 50mg/day. Week 5: 100mg/day. Week 6: 200mg/day.",
+            "inpatient_strategy": "Same as outpatient. Cannot rush due to SJS risk.",
+            "outpatient_strategy": "Strict adherence to 25mg increments. Educate on rash.",
+            "max_dose_evidence": "400 mg/day (rare)",
+            "max_dose_practice": "200 mg is standard target. Some patients need 300-400mg."
+        }
+    },
+    "cautions": {
+        "renal": "Caution if CrCl < 30.",
+        "hepatic": "Reduce dose by 50% in moderate, 75% in severe impairment.",
+        "pregnancy": "Generally considered safer than Valproate/Lithium, but cleft lip risk debate."
+    },
+    "warnings": [
+        "Stevens-Johnson Syndrome (Rash)",
+        "Interaction with Valproate (doubles levels)",
+        "Interaction with Oral Contraceptives (lowers levels)"
+    ],
+    "citations": [
+        "CANMAT Bipolar Guidelines 2018",
+        "Stahl"
+    ]
+}

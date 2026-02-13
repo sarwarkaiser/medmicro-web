@@ -1,0 +1,37 @@
+{
+    "name": "Risperidone",
+    "genericName": "Risperdal",
+    "tags": [
+        "antipsychotic",
+        "atypical",
+        "schizophrenia",
+        "irritability"
+    ],
+    "dosing": {
+        "adult_acute": "2-6 mg/day",
+        "adult_maintenance": "2-4 mg/day",
+        "notes": "Dose dependent EPS above 6mg.",
+        "canadian_clinical": {
+            "starting_dose": "1-2 mg/day (0.25-0.5 mg for elderly)",
+            "titration_schedule": "Increase by 1mg every 24-48 hours.",
+            "inpatient_strategy": "Start 2mg. Titrate to 4mg within 2-3 days.",
+            "outpatient_strategy": "Start 1mg QHS. Increase to 2mg after 3-4 days.",
+            "max_dose_evidence": "16 mg/day (very rare)",
+            "max_dose_practice": "6-8 mg/day. Above 6mg acts like typical antipsychotic (high prolactin/EPS)."
+        }
+    },
+    "cautions": {
+        "renal": "Start 0.5mg BID, increase by 0.5mg.",
+        "hepatic": "Start lower.",
+        "pregnancy": "Category C."
+    },
+    "warnings": [
+        "Hyperprolactinemia (Galactorrhea/Gynecomastia)",
+        "EPS at higher doses",
+        "Orthostatic Hypotension"
+    ],
+    "citations": [
+        "Product Monograph",
+        "Maudsley"
+    ]
+}

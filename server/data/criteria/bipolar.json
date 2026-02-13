@@ -1,0 +1,27 @@
+{
+    "disorder": "Bipolar I Disorder (Manic Episode)",
+    "code": "F31.x",
+    "criteria": [
+        "A. Distinct period of abnormally and persistently elevated, expansive, or irritable mood AND increased goal-directed activity/energy, lasting ≥1 week (or any duration if hospitalization needed)",
+        "",
+        "B. During the mood disturbance, 3+ of the following (4 if mood only irritable):",
+        "  1. Inflated self-esteem or grandiosity",
+        "  2. Decreased need for sleep",
+        "  3. More talkative than usual or pressure to keep talking",
+        "  4. Flight of ideas or racing thoughts",
+        "  5. Distractibility",
+        "  6. Increase in goal-directed activity or psychomotor agitation",
+        "  7. Excessive involvement in activities with high potential for painful consequences",
+        "",
+        "C. Mood disturbance severe enough to cause marked impairment OR necessitate hospitalization OR psychotic features",
+        "",
+        "D. Not attributable to substances or another medical condition"
+    ],
+    "specifiers": [
+        "With anxious distress",
+        "With mixed features",
+        "With rapid cycling",
+        "With psychotic features (mood-congruent vs incongruent)",
+        "With peripartum onset"
+    ]
+}

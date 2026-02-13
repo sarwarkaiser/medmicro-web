@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="description" content="High-trust, low-noise medical utilities for residents">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MedMicro">
+
+    <title>MedMicro - Medical Reference</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- iOS Safari -->
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+    <!-- App Container -->
+    <div id="app">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1>🏥 MedMicro</h1>
+                <p class="header-subtitle">Medical Reference for Residents</p>
+            </div>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search medications or guidelines..." class="search-input">
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="tabs">
+            <button class="tab active" data-tab="meds">
+                <span class="tab-icon">💊</span>
+                <span class="tab-label">Meds</span>
+            </button>
+            <button class="tab" data-tab="guidelines">
+                <span class="tab-icon">📚</span>
+                <span class="tab-label">Guidelines</span>
+            </button>
+            <button class="tab" data-tab="criteria">
+                <span class="tab-icon">📋</span>
+                <span class="tab-label">Criteria</span>
+            </button>
+            <button class="tab" data-tab="calc">
+                <span class="tab-icon">🧮</span>
+                <span class="tab-label">Calc</span>
+            </button>
+        </nav>
+
+        <!-- Content Area -->
+        <main class="content">
+            <!-- Medications Tab -->
+            <div id="meds-tab" class="tab-content active">
+                <div class="category-pills">
+                    <button class="pill active" data-class="all">All</button>
+                    <button class="pill" data-class="SSRI">SSRIs</button>
+                    <button class="pill" data-class="SNRI">SNRIs</button>
+                    <button class="pill" data-class="Antipsychotic">Antipsychotics</button>
+                    <button class="pill" data-class="Mood Stabilizer">Mood Stabilizers</button>
+                </div>
+                <div id="meds-list" class="card-list">
+                    <div class="loading">Loading medications...</div>
+                </div>
+            </div>
+
+            <!-- Guidelines Tab -->
+            <div id="guidelines-tab" class="tab-content">
+                <div class="category-pills">
+                    <button class="pill active" data-category="">All</button>
+                    <button class="pill" data-category="depression">Depression</button>
+                    <button class="pill" data-category="bipolar">Bipolar</button>
+                    <button class="pill" data-category="schizophrenia">Schizophrenia</button>
+                    <button class="pill" data-category="anxiety">Anxiety</button>
+                </div>
+                <div id="guidelines-list" class="card-list">
+                    <div class="loading">Loading guidelines...</div>
+                </div>
+            </div>
+
+            <!-- Criteria Tab -->
+            <div id="criteria-tab" class="tab-content">
+                <div class="card-list">
+                    <div class="criteria-card" data-disorder="Major Depressive Disorder">
+                        <h3>Major Depressive Disorder</h3>
+                        <p class="card-meta">DSM-5 Diagnostic Criteria</p>
+                    </div>
+                    <div class="criteria-card" data-disorder="Bipolar I Disorder">
+                        <h3>Bipolar I Disorder</h3>
+                        <p class="card-meta">DSM-5 Diagnostic Criteria</p>
+                    </div>
+                    <div class="criteria-card" data-disorder="Schizophrenia">
+                        <h3>Schizophrenia</h3>
+                        <p class="card-meta">DSM-5 Diagnostic Criteria</p>
+                    </div>
+                    <div class="criteria-card" data-disorder="Generalized Anxiety Disorder">
+                        <h3>Generalized Anxiety Disorder</h3>
+                        <p class="card-meta">DSM-5 Diagnostic Criteria</p>
+                    </div>
+                    <div class="criteria-card" data-disorder="Panic Disorder">
+                        <h3>Panic Disorder</h3>
+                        <p class="card-meta">DSM-5 Diagnostic Criteria</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculators Tab -->
+            <div id="calc-tab" class="tab-content">
+                <div class="card-list">
+                    <!-- PHQ-9 -->
+                    <div class="calc-card">
+                        <h3>PHQ-9 Depression Screener</h3>
+                        <p class="card-meta">Total score: 0-27</p>
+                        <input type="number" class="calc-input" id="phq9-input" placeholder="Enter score (0-27)" min="0" max="27">
+                        <button class="btn-primary" onclick="calculatePHQ9()">Calculate</button>
+                        <div id="phq9-result" class="calc-result"></div>
+                    </div>
+
+                    <!-- GAD-7 -->
+                    <div class="calc-card">
+                        <h3>GAD-7 Anxiety Screener</h3>
+                        <p class="card-meta">Total score: 0-21</p>
+                        <input type="number" class="calc-input" id="gad7-input" placeholder="Enter score (0-21)" min="0" max="21">
+                        <button class="btn-primary" onclick="calculateGAD7()">Calculate</button>
+                        <div id="gad7-result" class="calc-result"></div>
+                    </div>
+
+                    <!-- BMI -->
+                    <div class="calc-card">
+                        <h3>BMI Calculator</h3>
+                        <p class="card-meta">Weight (kg) and Height (cm)</p>
+                        <input type="number" class="calc-input" id="bmi-weight" placeholder="Weight (kg)" step="0.1">
+                        <input type="number" class="calc-input" id="bmi-height" placeholder="Height (cm)">
+                        <button class="btn-primary" onclick="calculateBMI()">Calculate</button>
+                        <div id="bmi-result" class="calc-result"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Detail Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+
+        <!-- Install Prompt -->
+        <div id="install-prompt" class="install-prompt hidden">
+            <div class="install-content">
+                <span>📱 Install MedMicro for offline access</span>
+                <button class="btn-install" id="install-button">Install</button>
+                <button class="btn-dismiss" onclick="dismissInstall()">×</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/app.js"></script>
+</body>
+</html>

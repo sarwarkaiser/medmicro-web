@@ -1,0 +1,37 @@
+{
+    "name": "Valproate",
+    "genericName": "Divalproex Sodium",
+    "tags": [
+        "mood stabilizer",
+        "mania",
+        "seizures"
+    ],
+    "dosing": {
+        "adult_acute": "750-1000 mg/day (loading dose 20mg/kg in mania)",
+        "adult_maintenance": "1000-2000 mg/day",
+        "notes": "Monitor VPA levels.",
+        "canadian_clinical": {
+            "starting_dose": "250mg TID or 500mg BID (or 20mg/kg loading for acute mania)",
+            "titration_schedule": "Increase by 250-500mg every 3 days based on tolerability using monitoring levels.",
+            "inpatient_strategy": "Rapid loading: 20-30mg/kg/day can be used to reach therapeutic levels within 24 hours.",
+            "outpatient_strategy": "Start 250mg TID, increase by 250-500mg weekly to minimize GI side effects.",
+            "max_dose_evidence": "60 mg/kg/day (Product Monograph)",
+            "max_dose_practice": "Often capped around 2500-3000mg/day depending on levels/side effects."
+        }
+    },
+    "cautions": {
+        "renal": "No adjustment needed.",
+        "hepatic": "Contraindicated in severe hepatic impairment. Monitor LFTs.",
+        "pregnancy": "Teratogenic (Neural Tube Defects). Avoid if possible in women of childbearing potential."
+    },
+    "warnings": [
+        "Hepatotoxicity",
+        "Pancreatitis",
+        "Teratogenicity",
+        "Thrombocytopenia"
+    ],
+    "citations": [
+        "CANMAT Bipolar Guidelines 2018",
+        "Stahl's Essential Psychopharmacology"
+    ]
+}

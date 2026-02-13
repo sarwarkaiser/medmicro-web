@@ -1,0 +1,40 @@
+{
+    "name": "Quetiapine",
+    "genericName": "Seroquel",
+    "tags": [
+        "antipsychotic",
+        "atypical",
+        "mania",
+        "depression",
+        "schizophrenia"
+    ],
+    "dosing": {
+        "adult_acute": "300-800 mg/day (titrate up related to indication)",
+        "adult_maintenance": "400-800 mg/day (XR preferred for compliance)",
+        "notes": "XR needs to be taken on empty stomach or light meal.",
+        "canadian_clinical": {
+            "starting_dose": "50mg (IR) or 300mg (XR) depending on urgency/indication. Low dose (25mg) for sleep is off-label.",
+            "titration_schedule": "Schizophrenia/Mania: Day 1: 50mg BID, D2: 100mg BID, D3: 150mg BID, D4: 200mg BID. XR can be titrated faster (Day 1: 300mg, Day 2: 600mg).",
+            "inpatient_strategy": "Aggressive titration (XR strategy) usually tolerated well under observation. Day 1: 300mg, Day 2: 600mg.",
+            "outpatient_strategy": "Slower IR titration may be preferred if sedation is a concern (e.g., start 25-50mg QHS).",
+            "max_dose_evidence": "800 mg/day (Schizophrenia/Mania)",
+            "max_dose_practice": "Certain refractory cases may see up to 1000mg-1200mg (rare, off-label with monitoring)."
+        }
+    },
+    "cautions": {
+        "renal": "Start lower dose (25mg/day), increase by 25-50mg daily.",
+        "hepatic": "Start lower dose (25mg/day), slow titration.",
+        "pregnancy": "Risk/Benefit analysis (Category C). Risk of EPS in neonate."
+    },
+    "warnings": [
+        "Metabolic Syndrome (Weight gain, lipids, glucose)",
+        "Sedation/Somnolence",
+        "Orthostatic Hypotension",
+        "QTc Prolongation"
+    ],
+    "citations": [
+        "APA Schizophrenia Guidelines 2020",
+        "Product Monograph",
+        "Maudsley Prescribing Guidelines"
+    ]
+}

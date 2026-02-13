@@ -1,0 +1,38 @@
+{
+    "name": "Lithium",
+    "genericName": "Lithium Carbonate",
+    "tags": [
+        "mood stabilizer",
+        "mania",
+        "bipolar maintenance",
+        "suicide prevention"
+    ],
+    "dosing": {
+        "adult_acute": "600-1800 mg/day (target level 0.8-1.2 mEq/L)",
+        "adult_maintenance": "600-1200 mg/day (target level 0.6-0.8 mEq/L)",
+        "notes": "Narrow therapeutic index. Monitor serum levels.",
+        "canadian_clinical": {
+            "starting_dose": "300mg BID or 600mg QHS (use ER for better renal profile/tolerability)",
+            "titration_schedule": "Increase by 300mg every 3-5 days. Check trough level (12 hr post-dose) after 5 days of steady dosing. Aim for >0.6.",
+            "inpatient_strategy": "Can start 300mg TID or 450mg BID. Check levels on day 4/5. Adjust rapidly.",
+            "outpatient_strategy": "Start 300mg BID. Recheck level in 5-7 days. Titrate to 0.6-0.8.",
+            "max_dose_evidence": "Dependent on serum level (usually 1.2 mEq/L acute)",
+            "max_dose_practice": "Doses >1200mg/day often required for acute mania. Clinical max determined by toxicity (>1.5 mEq/L)."
+        }
+    },
+    "cautions": {
+        "renal": "Renally cleared. Adjust dose based on GFR. Contraindicated in severe failure.",
+        "hepatic": "Minimal concern.",
+        "pregnancy": "Ebsteins Anomaly (first trimester risk). Monitor levels closely."
+    },
+    "warnings": [
+        "Lithium Toxicity (Tremor, Ataxia, Confusion)",
+        "Hypothyroidism",
+        "Diabetes Insipidus (Polyuria)",
+        "Renal Impairment (Long term)"
+    ],
+    "citations": [
+        "CANMAT Bipolar Guidelines 2018",
+        "Product Monograph"
+    ]
+}

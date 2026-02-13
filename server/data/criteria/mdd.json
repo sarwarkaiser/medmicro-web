@@ -1,0 +1,33 @@
+{
+    "disorder": "Major Depressive Disorder",
+    "code": "F32.x / F33.x",
+    "criteria": [
+        "A. Five (or more) of the following during the same 2-week period (at least one is depressed mood or loss of interest/pleasure):",
+        "  1. Depressed mood most of the day, nearly every day",
+        "  2. Markedly diminished interest or pleasure in all/almost all activities",
+        "  3. Significant weight loss/gain or appetite change",
+        "  4. Insomnia or hypersomnia nearly every day",
+        "  5. Psychomotor agitation or retardation",
+        "  6. Fatigue or loss of energy",
+        "  7. Feelings of worthlessness or excessive/inappropriate guilt",
+        "  8. Diminished ability to think or concentrate, indecisiveness",
+        "  9. Recurrent thoughts of death, suicidal ideation",
+        "",
+        "B. Symptoms cause clinically significant distress or impairment",
+        "",
+        "C. Not attributable to substances or another medical condition",
+        "",
+        "D. Not better explained by schizoaffective, schizophrenia, or other psychotic disorder",
+        "",
+        "E. Never been a manic or hypomanic episode"
+    ],
+    "specifiers": [
+        "Severity: Mild, Moderate, Severe",
+        "With anxious distress",
+        "With melancholic features",
+        "With atypical features",
+        "With psychotic features",
+        "With peripartum onset",
+        "With seasonal pattern"
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "name": "Venlafaxine",
+    "genericName": "Venlafaxine XR (Effexor XR)",
+    "tags": [
+        "SNRI",
+        "Antidepressant",
+        "Anxiety"
+    ],
+    "dosing": {
+        "adult_acute": "Depression: 75 mg XR daily, may increase to 225 mg/day. Anxiety: 75-225 mg/day",
+        "adult_maintenance": "75-225 mg/day XR",
+        "notes": "Take with food. XR preferred. Avoid IR formulation. Max 375 mg/day."
+    },
+    "cautions": {
+        "renal": "Reduce dose 25-50% in moderate-severe renal impairment",
+        "hepatic": "Reduce dose 50% in hepatic impairment",
+        "pregnancy": "Cat C - Neonatal complications reported"
+    },
+    "warnings": [
+        "Dose-dependent BP elevation (monitor BP)",
+        "Higher discontinuation syndrome vs SSRIs - MUST taper",
+        "Suicidality risk in young adults",
+        "Avoid with MAOIs",
+        "More activating than SSRIs"
+    ],
+    "citations": [
+        "CANMAT Depression 2016",
+        "NICE GAD 2011"
+    ]
+}
