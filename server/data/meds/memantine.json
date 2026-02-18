@@ -1,0 +1,39 @@
+{
+    "name": "Memantine",
+    "genericName": "Ebixa / Namenda",
+    "tags": [
+        "NMDA antagonist",
+        "dementia",
+        "alzheimer"
+    ],
+    "dosing": {
+        "adult_acute": "5-20 mg/day",
+        "adult_maintenance": "20 mg/day (or 28 mg/day extended-release)",
+        "notes": "Can be taken with or without food. Often used in combination with cholinesterase inhibitors in moderate-severe Alzheimer's. ER once-daily formulation available.",
+        "canadian_clinical": {
+            "starting_dose": "5 mg/day",
+            "titration_schedule": "Increase by 5 mg weekly over 4 weeks: Week 1: 5mg, Week 2: 10mg, Week 3: 15mg, Week 4: 20mg.",
+            "inpatient_strategy": "Initiate in stable patients. Follow titration schedule. Monitor for confusion or worsening cognition.",
+            "outpatient_strategy": "Titrate over 4 weeks. Caregivers should monitor for dizziness, confusion, and headache.",
+            "max_dose_evidence": "20 mg/day (IR); 28 mg/day (ER)",
+            "max_dose_practice": "20 mg/day (IR) or 28 mg/day (ER once daily)."
+        }
+    },
+    "cautions": {
+        "renal": "Reduce dose in moderate renal impairment (CrCl 5-29: target 10 mg/day). Avoid in severe impairment.",
+        "hepatic": "No specific adjustment required; use caution in severe hepatic impairment.",
+        "pregnancy": "Avoid — insufficient safety data."
+    },
+    "warnings": [
+        "Dizziness and headache (especially during titration)",
+        "Confusion may transiently worsen during titration",
+        "Use caution in epilepsy (may lower seizure threshold)",
+        "Urinary retention (uncommon)",
+        "Drug interactions: alkalinizing agents increase memantine levels"
+    ],
+    "citations": [
+        "CCNA (Canadian Consortium on Neurodegeneration in Aging)",
+        "NICE Dementia Guideline NG97 2018",
+        "Maudsley Prescribing Guidelines 14th ed"
+    ]
+}

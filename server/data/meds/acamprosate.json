@@ -1,0 +1,38 @@
+{
+    "name": "Acamprosate",
+    "genericName": "Campral",
+    "tags": [
+        "GABA modulator",
+        "alcohol use disorder"
+    ],
+    "dosing": {
+        "adult_acute": "666 mg TID (≥60 kg); 333-666 mg TID (<60 kg)",
+        "adult_maintenance": "666 mg three times daily",
+        "notes": "Take with meals. Begin after alcohol withdrawal is complete. Does not treat withdrawal symptoms. Works best in patients with goal of abstinence. Continue for up to 1 year.",
+        "canadian_clinical": {
+            "starting_dose": "666 mg TID (≥60kg); reduce to 333-666 mg TID if <60 kg.",
+            "titration_schedule": "No titration; start at full dose after detoxification is complete.",
+            "inpatient_strategy": "Initiate after acute alcohol withdrawal managed. Start full dose prior to discharge.",
+            "outpatient_strategy": "Initiate when abstinence achieved. Combine with behavioral therapy. Follow up monthly initially.",
+            "max_dose_evidence": "1998 mg/day (666 mg TID)",
+            "max_dose_practice": "1998 mg/day."
+        }
+    },
+    "cautions": {
+        "renal": "Reduce dose if CrCl 30-50: 333 mg TID. Contraindicated if CrCl <30.",
+        "hepatic": "No dose adjustment required — not significantly hepatically metabolized.",
+        "pregnancy": "Avoid — insufficient safety data."
+    },
+    "warnings": [
+        "Diarrhea (most common side effect)",
+        "Suicidal ideation reported — monitor mental health",
+        "Nausea, flatulence",
+        "Not effective during active drinking — used for maintaining abstinence",
+        "No abuse potential"
+    ],
+    "citations": [
+        "CANMAT Substance Use Disorders 2019",
+        "NICE Alcohol Use Disorder NG115 2019",
+        "ASAM Clinical Practice Guidelines 2015"
+    ]
+}

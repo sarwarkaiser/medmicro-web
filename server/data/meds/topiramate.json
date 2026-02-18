@@ -1,0 +1,43 @@
+{
+    "name": "Topiramate",
+    "genericName": "Topamax",
+    "tags": [
+        "anticonvulsant",
+        "mood stabilizer",
+        "migraine prevention",
+        "bipolar",
+        "alcohol use disorder"
+    ],
+    "dosing": {
+        "adult_acute": "25-400 mg/day (epilepsy); 25-200 mg/day (mood/migraine)",
+        "adult_maintenance": "100-200 mg/day",
+        "notes": "Start very low and titrate slowly to minimize cognitive side effects. Take twice daily. Adequate hydration essential (kidney stone risk). Contraception required in women of childbearing age.",
+        "canadian_clinical": {
+            "starting_dose": "25 mg/day at bedtime",
+            "titration_schedule": "Increase by 25 mg every 1-2 weeks. Target dose 50-100 mg BID.",
+            "inpatient_strategy": "For acute bipolar adjunct: start 25 mg BID, titrate to 100-200 mg/day. Monitor cognitive function.",
+            "outpatient_strategy": "Titrate slowly (25 mg/1-2 weeks). For migraine prevention: target 50-100 mg/day. For bipolar: 100-200 mg/day.",
+            "max_dose_evidence": "400 mg/day (seizures); 200 mg/day (psychiatric/migraine)",
+            "max_dose_practice": "200 mg/day in psychiatric practice."
+        }
+    },
+    "cautions": {
+        "renal": "Reduce dose by 50% if CrCl <70. Monitor for kidney stones.",
+        "hepatic": "Use with caution; plasma levels may be increased.",
+        "pregnancy": "Contraindicated — major teratogen (oral clefts, neural tube defects). Requires effective contraception."
+    },
+    "warnings": [
+        "Cognitive impairment ('dopamax') — word-finding difficulty, slowed thinking, memory issues",
+        "Kidney stones — adequate hydration essential",
+        "Metabolic acidosis",
+        "Angle-closure glaucoma (acute onset — ophthalmologic emergency)",
+        "Weight loss (sometimes desired, sometimes harmful)",
+        "Teratogenic — absolutely requires contraception",
+        "Heat dysregulation / oligohidrosis"
+    ],
+    "citations": [
+        "CANMAT Bipolar 2018",
+        "Maudsley Prescribing Guidelines 14th ed",
+        "NICE Migraine NG150 2021"
+    ]
+}

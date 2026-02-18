@@ -1,0 +1,31 @@
+{
+    "disorder": "Social Anxiety Disorder (Social Phobia)",
+    "code": "F40.10",
+    "criteria": [
+        "A. Marked fear or anxiety about one or more social situations in which the individual is exposed to possible scrutiny by others (e.g., social interactions, being observed, performing in front of others)",
+        "",
+        "B. The individual fears that they will act in a way or show anxiety symptoms that will be negatively evaluated (embarrassed, humiliated, lead to rejection or offend others)",
+        "",
+        "C. The social situations almost always provoke fear or anxiety",
+        "",
+        "D. The social situations are avoided or endured with intense fear or anxiety",
+        "",
+        "E. The fear or anxiety is out of proportion to the actual threat posed by the situation and the sociocultural context",
+        "",
+        "F. Duration of ≥6 months",
+        "",
+        "G. Clinically significant distress or functional impairment",
+        "",
+        "H. Not attributable to substance or medical condition",
+        "",
+        "I. Not better explained by another mental disorder",
+        "",
+        "J. If another medical condition is present, the fear/anxiety is unrelated or excessive"
+    ],
+    "specifiers": [
+        "Performance only: fear restricted to speaking or performing in public",
+        "Distinguish from: normal shyness, agoraphobia, panic disorder, specific phobia",
+        "Common comorbidities: MDD, other anxiety disorders, AUD",
+        "First-line treatments: CBT with exposure, SSRIs (sertraline, escitalopram, paroxetine), SNRIs (venlafaxine)"
+    ]
+}

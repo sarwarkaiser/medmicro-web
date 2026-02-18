@@ -1,0 +1,37 @@
+{
+    "disorder": "Alcohol Use Disorder",
+    "code": "F10.x",
+    "criteria": [
+        "A problematic pattern of alcohol use leading to clinically significant impairment or distress, as manifested by at least 2 of the following in a 12-month period:",
+        "",
+        "1. Alcohol often taken in larger amounts or over a longer period than intended",
+        "",
+        "2. Persistent desire or unsuccessful efforts to cut down or control use",
+        "",
+        "3. A great deal of time spent obtaining, using, or recovering from effects of alcohol",
+        "",
+        "4. Craving, or a strong desire to use alcohol",
+        "",
+        "5. Recurrent use resulting in failure to fulfil major role obligations at work, school, or home",
+        "",
+        "6. Continued use despite persistent social or interpersonal problems caused or exacerbated by alcohol",
+        "",
+        "7. Important social, occupational, or recreational activities given up or reduced because of alcohol",
+        "",
+        "8. Recurrent use in situations in which it is physically hazardous",
+        "",
+        "9. Continued use despite knowledge of persistent physical or psychological problems caused/worsened by alcohol",
+        "",
+        "10. Tolerance: need for markedly increased amounts to achieve intoxication/desired effect, OR markedly diminished effect with continued use of the same amount",
+        "",
+        "11. Withdrawal: characteristic withdrawal syndrome, OR alcohol (or closely related substance) taken to relieve or avoid withdrawal symptoms"
+    ],
+    "specifiers": [
+        "Severity: Mild (2-3 criteria), Moderate (4-5 criteria), Severe (≥6 criteria)",
+        "In early remission: 3-12 months without criteria (except craving)",
+        "In sustained remission: ≥12 months without criteria (except craving)",
+        "CAGE screening: Cut down, Annoyed, Guilty, Eye-opener (≥2 = positive screen)",
+        "AUDIT score ≥8 suggests harmful use; ≥15 suggests likely dependence",
+        "Pharmacotherapy: naltrexone, acamprosate, disulfiram (third-line)"
+    ]
+}

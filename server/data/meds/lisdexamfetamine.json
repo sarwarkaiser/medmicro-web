@@ -1,0 +1,40 @@
+{
+    "name": "Lisdexamfetamine",
+    "genericName": "Vyvanse",
+    "tags": [
+        "stimulant",
+        "adhd",
+        "binge eating disorder"
+    ],
+    "dosing": {
+        "adult_acute": "30-70 mg/day",
+        "adult_maintenance": "30-70 mg/day",
+        "notes": "Take in the morning with or without food. Prodrug — converted to d-amphetamine in the GI tract, reducing abuse potential of IV/intranasal use. Approved for ADHD and BED.",
+        "canadian_clinical": {
+            "starting_dose": "30 mg every morning",
+            "titration_schedule": "Increase by 10-20 mg every 1-2 weeks based on response.",
+            "inpatient_strategy": "Start 30 mg each morning. Can titrate to 50-70 mg over 2-4 weeks if tolerated.",
+            "outpatient_strategy": "Start 30 mg. Review at 4 weeks. Target symptom control with minimal side effects.",
+            "max_dose_evidence": "70 mg/day",
+            "max_dose_practice": "70 mg/day (approved maximum)."
+        }
+    },
+    "cautions": {
+        "renal": "Reduce dose in moderate renal impairment (CrCl 15-30: max 50 mg/day). Avoid in severe impairment.",
+        "hepatic": "No specific data; use caution in severe hepatic impairment.",
+        "pregnancy": "Avoid; amphetamines associated with neonatal withdrawal and prematurity."
+    },
+    "warnings": [
+        "Cardiovascular: increased BP and HR — contraindicated in symptomatic cardiovascular disease",
+        "Psychiatric effects: new or worsening psychosis, mania, aggression",
+        "Insomnia and appetite suppression",
+        "High abuse potential — Schedule III controlled substance",
+        "Rare: serotonin syndrome, peripheral vasculopathy",
+        "Do not use within 14 days of MAOI"
+    ],
+    "citations": [
+        "CADDRA ADHD Guidelines 2020",
+        "Health Canada Product Monograph — Vyvanse",
+        "NICE ADHD Guidelines NG87 2018"
+    ]
+}

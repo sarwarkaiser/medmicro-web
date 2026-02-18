@@ -1,0 +1,43 @@
+{
+    "name": "Amitriptyline",
+    "genericName": "Elavil",
+    "tags": [
+        "TCA",
+        "depression",
+        "neuropathic pain",
+        "migraine prevention",
+        "insomnia"
+    ],
+    "dosing": {
+        "adult_acute": "75-200 mg/day",
+        "adult_maintenance": "50-150 mg/day",
+        "notes": "Take at bedtime. Therapeutic drug monitoring available (target 80-200 ng/mL combined amitriptyline + nortriptyline). Widely used for pain and migraine at sub-antidepressant doses.",
+        "canadian_clinical": {
+            "starting_dose": "10-25 mg/day at bedtime",
+            "titration_schedule": "Increase by 25 mg every 5-7 days as tolerated.",
+            "inpatient_strategy": "Start 25-50 mg nocte. Titrate to 100-150 mg over 1-2 weeks targeting antidepressant effect.",
+            "outpatient_strategy": "Start 10-25 mg nocte for tolerability. For pain/migraine: target 25-75 mg. For depression: target 100-200 mg.",
+            "max_dose_evidence": "300 mg/day",
+            "max_dose_practice": "200 mg/day (most clinicians limit here due to toxicity risk)."
+        }
+    },
+    "cautions": {
+        "renal": "No specific adjustment; monitor for accumulation.",
+        "hepatic": "Avoid in severe hepatic impairment; reduce dose if mild-moderate.",
+        "pregnancy": "Generally avoided; limited safety data, neonatal withdrawal possible."
+    },
+    "warnings": [
+        "QTc prolongation — baseline and follow-up ECG recommended",
+        "High lethality in overdose (cardiac arrhythmia)",
+        "Heavy anticholinergic burden (dry mouth, constipation, urinary retention, delirium risk in elderly)",
+        "Marked sedation",
+        "Orthostatic hypotension — fall risk especially in elderly",
+        "Lower seizure threshold",
+        "Not recommended as first-line in elderly (Beers Criteria)"
+    ],
+    "citations": [
+        "CANMAT Depression 2016",
+        "Maudsley Prescribing Guidelines 14th ed",
+        "NICE CKS Neuropathic Pain 2022"
+    ]
+}

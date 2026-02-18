@@ -1,0 +1,40 @@
+{
+    "name": "Nortriptyline",
+    "genericName": "Aventyl",
+    "tags": [
+        "TCA",
+        "depression",
+        "neuropathic pain"
+    ],
+    "dosing": {
+        "adult_acute": "25-150 mg/day",
+        "adult_maintenance": "50-100 mg/day",
+        "notes": "Better tolerated than amitriptyline. Serum level monitoring useful (target 50-150 ng/mL). Take at bedtime.",
+        "canadian_clinical": {
+            "starting_dose": "10-25 mg/day at bedtime",
+            "titration_schedule": "Increase by 25 mg every 5-7 days.",
+            "inpatient_strategy": "Start 25 mg nocte. Titrate by 25 mg every 3-5 days. Target 75-150 mg.",
+            "outpatient_strategy": "Start 10-25 mg nocte. Review in 2-4 weeks. Titrate slowly.",
+            "max_dose_evidence": "150 mg/day",
+            "max_dose_practice": "150 mg/day (TDM recommended above 100 mg)."
+        }
+    },
+    "cautions": {
+        "renal": "No specific adjustment required; monitor closely.",
+        "hepatic": "Reduce dose in hepatic impairment; use with caution.",
+        "pregnancy": "Avoid; neonatal withdrawal symptoms possible."
+    },
+    "warnings": [
+        "QTc prolongation — baseline ECG recommended",
+        "Anticholinergic side effects (dry mouth, constipation, urinary retention)",
+        "Orthostatic hypotension",
+        "Sedation (less than amitriptyline)",
+        "Lower seizure threshold",
+        "Cardiovascular effects in overdose — high lethality"
+    ],
+    "citations": [
+        "CANMAT Depression 2016",
+        "Maudsley Prescribing Guidelines 14th ed",
+        "BAP Depression Guidelines 2019"
+    ]
+}

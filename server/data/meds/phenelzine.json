@@ -1,0 +1,45 @@
+{
+    "name": "Phenelzine",
+    "genericName": "Nardil",
+    "tags": [
+        "MAOI",
+        "depression",
+        "anxiety",
+        "social anxiety disorder",
+        "PTSD"
+    ],
+    "dosing": {
+        "adult_acute": "15-90 mg/day in divided doses",
+        "adult_maintenance": "15-30 mg/day",
+        "notes": "Irreversible MAOI. Strict tyramine-free diet required. 2-week washout from other antidepressants before initiating (5-week washout from fluoxetine). Take in 2-3 divided doses. Avoid evening doses due to insomnia.",
+        "canadian_clinical": {
+            "starting_dose": "15 mg/day (7.5 mg BID or 15 mg each morning)",
+            "titration_schedule": "Increase by 15 mg/week to 45-60 mg/day. Some patients require up to 90 mg/day.",
+            "inpatient_strategy": "Start 15 mg/day. Titrate q5-7 days. Target 45-60 mg/day. Dietary restriction education essential from Day 1.",
+            "outpatient_strategy": "Comprehensive dietary education mandatory. Titrate over 4-6 weeks. Issue patient emergency card for MAOI interactions.",
+            "max_dose_evidence": "90 mg/day",
+            "max_dose_practice": "60-90 mg/day; 90 mg/day reserved for treatment-resistant cases."
+        }
+    },
+    "cautions": {
+        "renal": "Use with caution; limited data.",
+        "hepatic": "Avoid in hepatic impairment — risk of hepatotoxicity.",
+        "pregnancy": "Avoid — risk of fetal harm, hypertensive crises."
+    },
+    "warnings": [
+        "CRITICAL: Hypertensive crisis with tyramine-containing foods (cheese, aged meats, wines, fava beans, etc.)",
+        "CRITICAL: Serotonin syndrome with serotonergic drugs (SSRIs, TCAs, opioids like tramadol/meperidine, triptans)",
+        "Must carry MAOI patient emergency card",
+        "2-week drug-free washout required before starting; 2 weeks required after stopping before other antidepressants",
+        "5-week washout required if switching FROM fluoxetine",
+        "Orthostatic hypotension",
+        "Insomnia, weight gain",
+        "Peripheral edema",
+        "Pyridoxine (B6) deficiency with long-term use — supplement recommended"
+    ],
+    "citations": [
+        "CANMAT Depression 2016 (third-line treatment)",
+        "Maudsley Prescribing Guidelines 14th ed",
+        "APA Practice Guidelines Depression 2021"
+    ]
+}

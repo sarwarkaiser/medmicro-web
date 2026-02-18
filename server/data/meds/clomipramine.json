@@ -1,0 +1,42 @@
+{
+    "name": "Clomipramine",
+    "genericName": "Anafranil",
+    "tags": [
+        "TCA",
+        "ocd",
+        "depression",
+        "anxiety"
+    ],
+    "dosing": {
+        "adult_acute": "25-250 mg/day",
+        "adult_maintenance": "100-150 mg/day",
+        "notes": "Take at bedtime to minimize sedation. Titrate slowly to reduce side effects.",
+        "canadian_clinical": {
+            "starting_dose": "25 mg/day at bedtime",
+            "titration_schedule": "Increase by 25 mg every 3-5 days as tolerated.",
+            "inpatient_strategy": "Start 25 mg nocte. Titrate to 100-150 mg over 1-2 weeks. Target 150-250 mg for OCD.",
+            "outpatient_strategy": "Start 25 mg nocte x 1 week, then 50 mg. Review in 4 weeks. Target therapeutic dose over 4-6 weeks.",
+            "max_dose_evidence": "250 mg/day (OCD)",
+            "max_dose_practice": "300 mg/day (inpatient monitoring required above 250 mg)."
+        }
+    },
+    "cautions": {
+        "renal": "Use with caution; limited data. Start low.",
+        "hepatic": "Avoid in severe hepatic impairment. Reduce dose in mild-moderate impairment.",
+        "pregnancy": "Avoid if possible; neonatal withdrawal reported. Use only if benefit outweighs risk."
+    },
+    "warnings": [
+        "QTc prolongation — ECG recommended before and during treatment",
+        "Seizure risk (dose-dependent, especially >250 mg/day)",
+        "Anticholinergic effects: dry mouth, constipation, urinary retention, blurred vision",
+        "Orthostatic hypotension",
+        "Sedation",
+        "Serotonin Syndrome risk (avoid combining with MAOIs)",
+        "Black box: Increased suicidal ideation in children and adolescents"
+    ],
+    "citations": [
+        "CANMAT Depression 2016",
+        "APA OCD Practice Guidelines",
+        "Maudsley Prescribing Guidelines 14th ed"
+    ]
+}

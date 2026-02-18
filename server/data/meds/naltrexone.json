@@ -1,0 +1,40 @@
+{
+    "name": "Naltrexone",
+    "genericName": "ReVia / Vivitrol",
+    "tags": [
+        "opioid antagonist",
+        "alcohol use disorder",
+        "opioid use disorder"
+    ],
+    "dosing": {
+        "adult_acute": "50 mg/day (oral) or 380 mg IM monthly (Vivitrol)",
+        "adult_maintenance": "50 mg/day or 380 mg IM every 4 weeks",
+        "notes": "Patient must be fully opioid-free for 7-10 days before initiating (risk of precipitated withdrawal). Take with food. IM formulation improves adherence.",
+        "canadian_clinical": {
+            "starting_dose": "25 mg/day for first 1-2 days then increase to 50 mg/day (oral). Vivitrol: 380 mg IM gluteal.",
+            "titration_schedule": "No titration required. Challenge with naloxone first if opioid abstinence uncertain.",
+            "inpatient_strategy": "Confirm opioid-free status (UDS negative, naloxone challenge). Start 25 mg Day 1, then 50 mg daily.",
+            "outpatient_strategy": "Document 7-10 day abstinence from opioids. Consider IM Vivitrol for adherence support.",
+            "max_dose_evidence": "50 mg/day (oral); 380 mg IM monthly",
+            "max_dose_practice": "50 mg/day; some use up to 100 mg/day off-label for AUD."
+        }
+    },
+    "cautions": {
+        "renal": "Use with caution in moderate-severe renal impairment; no specific dose adjustment but monitor.",
+        "hepatic": "Contraindicated in acute hepatitis or liver failure. Hepatotoxic at higher doses. Baseline LFTs recommended.",
+        "pregnancy": "Use only if benefit clearly outweighs risk; limited data. Discuss with patient."
+    },
+    "warnings": [
+        "BOXED WARNING: Hepatotoxicity at supratherapeutic doses — LFT monitoring recommended",
+        "Precipitated opioid withdrawal if patient not opioid-free — can be severe",
+        "Blocks analgesic effects of opioids — alert patients and medical team",
+        "Injection site reactions with IM formulation",
+        "Nausea (most common side effect — take with food)",
+        "Increased opioid sensitivity after discontinuation — overdose risk if patient resumes opioids"
+    ],
+    "citations": [
+        "CANMAT Substance Use Disorders 2019",
+        "ASAM Clinical Practice Guidelines 2015",
+        "NICE Alcohol Use Disorder NG115 2019"
+    ]
+}

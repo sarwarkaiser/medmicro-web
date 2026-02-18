@@ -1,0 +1,40 @@
+{
+    "name": "Methylphenidate",
+    "genericName": "Ritalin / Concerta / Biphentin",
+    "tags": [
+        "stimulant",
+        "adhd"
+    ],
+    "dosing": {
+        "adult_acute": "18-72 mg/day (extended-release); 5-20 mg 2-3x/day (IR)",
+        "adult_maintenance": "18-54 mg/day (ER) or 20-60 mg/day (IR in divided doses)",
+        "notes": "IR formulations taken 30 min before meals. ER products taken in the morning. Avoid late-afternoon dosing to prevent insomnia. Monitor BP and HR.",
+        "canadian_clinical": {
+            "starting_dose": "IR: 5 mg BID-TID. ER (Concerta/Biphentin): 18-36 mg each morning.",
+            "titration_schedule": "Increase by 5-10 mg weekly (IR) or 18 mg weekly (ER) based on response and tolerability.",
+            "inpatient_strategy": "Useful for diagnostic trials. Start IR 5 mg BID. Assess symptom response and cardiovascular parameters.",
+            "outpatient_strategy": "Prefer ER for once-daily dosing and adherence. Titrate monthly; use symptom rating scales (e.g. ASRS) to track.",
+            "max_dose_evidence": "60 mg/day (IR); 72 mg/day (Concerta)",
+            "max_dose_practice": "60-80 mg/day in some adults (individual clinical judgment)."
+        }
+    },
+    "cautions": {
+        "renal": "Use with caution; limited data in severe renal impairment.",
+        "hepatic": "No specific adjustment required.",
+        "pregnancy": "Avoid; limited human safety data. Discuss risk-benefit with patient."
+    },
+    "warnings": [
+        "Cardiovascular effects: increased BP and HR — contraindicated in structural cardiac abnormalities",
+        "Insomnia — avoid evening doses",
+        "Appetite suppression and weight loss",
+        "Psychiatric adverse effects: exacerbation of anxiety, psychosis, mania",
+        "Abuse potential — Schedule III in Canada (controlled substance)",
+        "Growth monitoring recommended in pediatric patients",
+        "Priapism (rare)"
+    ],
+    "citations": [
+        "CADDRA ADHD Guidelines 2020",
+        "CANMAT 2018 (ADHD section)",
+        "Maudsley Prescribing Guidelines 14th ed"
+    ]
+}

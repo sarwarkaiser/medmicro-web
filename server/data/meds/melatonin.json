@@ -1,0 +1,41 @@
+{
+    "name": "Melatonin",
+    "genericName": "Circadin (prolonged-release)",
+    "tags": [
+        "sleep aid",
+        "insomnia",
+        "circadian rhythm",
+        "jet lag"
+    ],
+    "dosing": {
+        "adult_acute": "0.5-10 mg at bedtime",
+        "adult_maintenance": "1-5 mg/day",
+        "notes": "Take 30-60 minutes before bedtime. Prolonged-release formulation (Circadin) approved for insomnia in patients ≥55. Lower doses (0.5-1 mg) may be as effective as higher doses for sleep. Used for jet lag, shift work disorder, and DSPD.",
+        "canadian_clinical": {
+            "starting_dose": "0.5-1 mg, 30-60 min before bedtime",
+            "titration_schedule": "Can increase to 3-5 mg if 1 mg ineffective. Evidence limited for doses >10 mg.",
+            "inpatient_strategy": "3-5 mg nocte for sleep regulation. Safer than benzodiazepines in elderly patients.",
+            "outpatient_strategy": "Start 1-3 mg nocte. Good safety profile for chronic use. Useful in DSPD — take 2-3 h before desired sleep time.",
+            "max_dose_evidence": "5 mg (approved); up to 10 mg used off-label",
+            "max_dose_practice": "10 mg/day (off-label); most benefit seen at 1-5 mg."
+        }
+    },
+    "cautions": {
+        "renal": "Use with caution; limited data.",
+        "hepatic": "Avoid in moderate-severe hepatic impairment.",
+        "pregnancy": "Insufficient safety data — avoid."
+    },
+    "warnings": [
+        "Morning drowsiness / next-day sedation at higher doses",
+        "Headache, dizziness",
+        "Interaction with warfarin (may enhance anticoagulant effect)",
+        "Interaction with fluvoxamine (markedly increases melatonin levels)",
+        "Not regulated as a drug in Canada (sold as natural health product) — variable quality",
+        "Limited evidence for long-term efficacy"
+    ],
+    "citations": [
+        "CANMAT Insomnia Recommendations 2021",
+        "EMA Circadin Product Monograph",
+        "Cochrane Review: Melatonin for Sleep Disorders 2022"
+    ]
+}

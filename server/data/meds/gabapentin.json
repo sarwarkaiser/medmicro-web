@@ -1,0 +1,43 @@
+{
+    "name": "Gabapentin",
+    "genericName": "Neurontin",
+    "tags": [
+        "gabapentinoid",
+        "neuropathic pain",
+        "anxiety",
+        "alcohol withdrawal",
+        "insomnia"
+    ],
+    "dosing": {
+        "adult_acute": "300-3600 mg/day in divided doses",
+        "adult_maintenance": "900-1800 mg/day (neuropathic pain); 300-900 mg/day (anxiety/insomnia off-label)",
+        "notes": "Titrate based on tolerability. TID dosing recommended (short half-life). Antacids reduce absorption — separate by 2 hours. Off-label psychiatric use (anxiety, insomnia) common but limited evidence.",
+        "canadian_clinical": {
+            "starting_dose": "100-300 mg/day (start low for anxiety/insomnia); 300 mg TID for neuropathic pain.",
+            "titration_schedule": "Increase by 300 mg every 1-3 days as tolerated.",
+            "inpatient_strategy": "For alcohol withdrawal adjunct: 300 mg TID day 1, taper over 3-5 days. For pain: start 300 mg TID.",
+            "outpatient_strategy": "Start low (100-300 mg nocte for insomnia). Titrate slowly. Avoid abrupt discontinuation.",
+            "max_dose_evidence": "3600 mg/day (pain)",
+            "max_dose_practice": "3600 mg/day (pain); 900-1800 mg/day (psychiatric off-label)."
+        }
+    },
+    "cautions": {
+        "renal": "Significant dose reduction required based on CrCl. Renally cleared — requires dose adjustment table.",
+        "hepatic": "No specific adjustment needed.",
+        "pregnancy": "Limited data; some neonatal concerns — use with caution."
+    },
+    "warnings": [
+        "Sedation and dizziness — falls risk, especially in elderly",
+        "Respiratory depression risk (especially with opioids, benzodiazepines, alcohol)",
+        "Abuse potential (increasing recognition — schedule consideration in some provinces)",
+        "Suicidal ideation (class warning for anticonvulsants)",
+        "Abrupt withdrawal can cause seizures — taper gradually",
+        "Peripheral edema",
+        "Ataxia"
+    ],
+    "citations": [
+        "NICE Neuropathic Pain CKS 2022",
+        "Maudsley Prescribing Guidelines 14th ed",
+        "CANMAT Anxiety Disorders 2014"
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "disorder": "Borderline Personality Disorder",
+    "code": "F60.3",
+    "criteria": [
+        "A pervasive pattern of instability of interpersonal relationships, self-image, and affects, and marked impulsivity, beginning by early adulthood, present in a variety of contexts, as indicated by five (or more) of the following:",
+        "",
+        "1. Frantic efforts to avoid real or imagined abandonment (not including suicidal or self-mutilating behaviour covered in criterion 5)",
+        "",
+        "2. A pattern of unstable and intense interpersonal relationships characterized by alternating between extremes of idealization and devaluation (splitting)",
+        "",
+        "3. Identity disturbance: markedly and persistently unstable self-image or sense of self",
+        "",
+        "4. Impulsivity in at least two areas that are potentially self-damaging (e.g., spending, sex, substance abuse, reckless driving, binge eating)",
+        "",
+        "5. Recurrent suicidal behaviour, gestures, or threats, or self-mutilating behaviour",
+        "",
+        "6. Affective instability due to marked reactivity of mood (e.g., intense episodic dysphoria, irritability, or anxiety usually lasting a few hours and rarely more than a few days)",
+        "",
+        "7. Chronic feelings of emptiness",
+        "",
+        "8. Inappropriate, intense anger or difficulty controlling anger (e.g., frequent displays of temper, constant anger, recurrent physical fights)",
+        "",
+        "9. Transient, stress-related paranoid ideation or severe dissociative symptoms"
+    ],
+    "specifiers": [
+        "No official DSM-5 specifiers — severity based on number and intensity of criteria",
+        "Common differential: CPTSD (ICD-11), bipolar disorder (rapid cycling), PTSD",
+        "Evidence-based treatments: DBT (first-line), MBT, STEPPS",
+        "Medications: adjunctive only — mood stabilizers for affect, low-dose antipsychotics for cognitive-perceptual symptoms"
+    ]
+}
