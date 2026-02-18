@@ -8,6 +8,7 @@ const path = require('path');
 const compression = require('compression');
 const helmet = require('helmet');
 const cors = require('cors');
+const rateLimit = require('express-rate-limit');
 const apiRouter = require('./routes/api');
 
 const app = express();
@@ -23,8 +24,20 @@ app.use(helmet({
 // Compression
 app.use(compression());
 
-// CORS
-app.use(cors());
+// CORS — open in development, restrict to ALLOWED_ORIGIN in production
+app.use(cors({
+  origin: NODE_ENV === 'production'
+    ? (process.env.ALLOWED_ORIGIN || false)
+    : true
+}));
+
+// Rate limiting for API routes (300 requests per 15 minutes)
+app.use('/api', rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 300,
+  standardHeaders: true,
+  legacyHeaders: false
+}));
 
 // Body parsing
 app.use(express.json());

@@ -4,8 +4,8 @@
   "description": "High-trust, low-noise medical utilities for residents",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f6f7fb",
-  "theme_color": "#114b5f",
+  "background_color": "#020617",
+  "theme_color": "#0891b2",
   "orientation": "portrait-primary",
   "icons": [
     {

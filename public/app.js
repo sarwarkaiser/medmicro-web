@@ -7,6 +7,14 @@ let currentMedClass = 'all';
 let currentGuidelineCategory = '';
 let deferredPrompt = null;
 
+// Active/inactive class sets for tab buttons
+const TAB_ACTIVE   = ['bg-cyan-500', 'text-white', 'shadow-lg', 'shadow-cyan-500/25'];
+const TAB_INACTIVE = ['text-slate-400', 'hover:text-slate-200', 'hover:bg-white/10'];
+
+// Active/inactive class sets for filter pills
+const PILL_ACTIVE   = ['bg-cyan-500', 'text-white', 'border-transparent'];
+const PILL_INACTIVE = ['bg-white/10', 'text-slate-300', 'border-white/20', 'hover:bg-white/20'];
+
 // Calculator scales and definitions
 const calcScales = {
     phq9: [
@@ -362,33 +370,42 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderCalculators();
 });
 
-// Tab switching
+// Tab switching — uses Tailwind classes instead of .active
 function switchTab(tabName) {
-    // Update tab buttons
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+    // Deactivate all tab buttons
+    document.querySelectorAll('.tab').forEach(t => {
+        t.classList.remove(...TAB_ACTIVE);
+        t.classList.add(...TAB_INACTIVE);
+    });
+    // Activate selected tab button
+    const activeTab = document.querySelector(`[data-tab="${tabName}"]`);
+    if (activeTab) {
+        activeTab.classList.remove(...TAB_INACTIVE);
+        activeTab.classList.add(...TAB_ACTIVE);
+    }
 
-    // Update content
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    document.getElementById(`${tabName}-tab`).classList.add('active');
+    // Hide all tab-content, show selected
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+    const activeContent = document.getElementById(`${tabName}-tab`);
+    if (activeContent) activeContent.classList.remove('hidden');
 }
 
 // Search
 function handleSearch(e) {
     const query = e.target.value.toLowerCase();
 
-    // Search meds
-    const medCards = document.querySelectorAll('#meds-list .card');
+    // Search meds (cards use data-med attribute)
+    const medCards = document.querySelectorAll('#meds-list [data-med]');
     medCards.forEach(card => {
         const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(query) ? 'block' : 'none';
+        card.style.display = text.includes(query) ? '' : 'none';
     });
 
-    // Search guidelines
-    const guidelineCards = document.querySelectorAll('#guidelines-list .card');
+    // Search guidelines (cards use data-guideline attribute)
+    const guidelineCards = document.querySelectorAll('#guidelines-list [data-guideline]');
     guidelineCards.forEach(card => {
         const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(query) ? 'block' : 'none';
+        card.style.display = text.includes(query) ? '' : 'none';
     });
 }
 
@@ -404,7 +421,7 @@ async function loadMeds() {
         }
     } catch (error) {
         console.error('Failed to load meds:', error);
-        document.getElementById('meds-list').innerHTML = '<div class="loading">Failed to load medications</div>';
+        document.getElementById('meds-list').innerHTML = '<div class="text-center py-8 text-slate-400">Failed to load medications</div>';
     }
 }
 
@@ -413,19 +430,22 @@ function renderMeds(meds) {
     const container = document.getElementById('meds-list');
 
     if (meds.length === 0) {
-        container.innerHTML = '<div class="loading">No medications found</div>';
+        container.innerHTML = '<div class="text-center py-8 text-slate-400">No medications found</div>';
         return;
     }
 
     container.innerHTML = meds.map(med => `
-        <div class="card" onclick="showMed('${med.name.toLowerCase()}')">
-            <h3>${med.name}</h3>
-            <p class="card-meta">${med.genericName}</p>
-            <div class="card-tags">
-                ${med.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+        <div
+            class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 cursor-pointer transition-all hover:bg-white/10 hover:border-white/20"
+            onclick="showMed('${med.name.toLowerCase().replace(/'/g, "\\'")}')" data-med
+        >
+            <h3 class="font-display text-base font-semibold text-white mb-0.5">${med.name}</h3>
+            <p class="text-sm text-slate-400 mb-2">${med.genericName}</p>
+            <div class="flex flex-wrap gap-1.5 mb-3">
+                ${med.tags.map(tag => `<span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-slate-400">${tag}</span>`).join('')}
             </div>
-            <div class="card-dose">
-                <strong>Maintenance:</strong> ${med.dosing.adult_maintenance}
+            <div class="p-2.5 bg-white/10 rounded-xl text-sm text-slate-300">
+                <span class="text-cyan-400 font-semibold">Maintenance:</span> ${med.dosing.adult_maintenance}
             </div>
         </div>
     `).join('');
@@ -434,8 +454,15 @@ function renderMeds(meds) {
 // Filter medications by class
 function filterMeds(className) {
     // Update active pill
-    document.querySelectorAll('#meds-tab .pill').forEach(p => p.classList.remove('active'));
-    document.querySelector(`#meds-tab .pill[data-class="${className}"]`).classList.add('active');
+    document.querySelectorAll('#meds-tab .pill').forEach(p => {
+        p.classList.remove(...PILL_ACTIVE);
+        p.classList.add(...PILL_INACTIVE);
+    });
+    const activePill = document.querySelector(`#meds-tab .pill[data-class="${className}"]`);
+    if (activePill) {
+        activePill.classList.remove(...PILL_INACTIVE);
+        activePill.classList.add(...PILL_ACTIVE);
+    }
 
     currentMedClass = className;
 
@@ -449,17 +476,17 @@ function filterMeds(className) {
     }
 }
 
-// Show medication details
+// Show medication details — API now returns array, take first match
 async function showMed(medName) {
     try {
-        const response = await fetch(`/api/meds/search?q=${medName}`);
+        const response = await fetch(`/api/meds/search?q=${encodeURIComponent(medName)}`);
         const data = await response.json();
 
-        if (data.success && data.data) {
-            const med = data.data;
+        if (data.success && data.data && data.data.length > 0) {
+            const med = data.data[0];
             let html = `
                 <h2>${med.name}</h2>
-                <p style="color: #6b7280; margin-bottom: 1rem;">${med.genericName}</p>
+                <p style="color:#94a3b8;margin-bottom:1rem">${med.genericName}</p>
 
                 <h3>Class</h3>
                 <p>${med.tags.join(', ')}</p>
@@ -501,7 +528,7 @@ async function showMed(medName) {
                 </ul>
 
                 <h3>References</h3>
-                <p style="font-size: 0.875rem; color: #6b7280;">${med.citations.join('; ')}</p>
+                <p style="font-size:0.875rem;color:#64748b">${med.citations.join('; ')}</p>
             `;
 
             showModal(html);
@@ -523,7 +550,7 @@ async function loadGuidelines() {
         }
     } catch (error) {
         console.error('Failed to load guidelines:', error);
-        document.getElementById('guidelines-list').innerHTML = '<div class="loading">Failed to load guidelines</div>';
+        document.getElementById('guidelines-list').innerHTML = '<div class="text-center py-8 text-slate-400">Failed to load guidelines</div>';
     }
 }
 
@@ -532,15 +559,18 @@ function renderGuidelines(guidelines) {
     const container = document.getElementById('guidelines-list');
 
     if (guidelines.length === 0) {
-        container.innerHTML = '<div class="loading">No guidelines found</div>';
+        container.innerHTML = '<div class="text-center py-8 text-slate-400">No guidelines found</div>';
         return;
     }
 
     container.innerHTML = guidelines.map(guideline => `
-        <div class="card" onclick="showGuideline('${guideline.id}')">
-            <h3>${guideline.title}</h3>
-            <p class="card-meta">${guideline.organization} • ${guideline.year}</p>
-            <p style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
+        <div
+            class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 cursor-pointer transition-all hover:bg-white/10 hover:border-white/20"
+            onclick="showGuideline('${guideline.id}')" data-guideline
+        >
+            <h3 class="font-display text-base font-semibold text-white mb-0.5">${guideline.title}</h3>
+            <p class="text-sm text-slate-400 mb-2">${guideline.organization} • ${guideline.year}</p>
+            <p class="text-sm text-slate-500">
                 ${guideline.content.substring(0, 150)}...
             </p>
         </div>
@@ -550,8 +580,15 @@ function renderGuidelines(guidelines) {
 // Filter guidelines by category
 function filterGuidelines(category) {
     // Update active pill
-    document.querySelectorAll('#guidelines-tab .pill').forEach(p => p.classList.remove('active'));
-    document.querySelector(`#guidelines-tab .pill[data-category="${category}"]`).classList.add('active');
+    document.querySelectorAll('#guidelines-tab .pill').forEach(p => {
+        p.classList.remove(...PILL_ACTIVE);
+        p.classList.add(...PILL_INACTIVE);
+    });
+    const activePill = document.querySelector(`#guidelines-tab .pill[data-category="${category}"]`);
+    if (activePill) {
+        activePill.classList.remove(...PILL_INACTIVE);
+        activePill.classList.add(...PILL_ACTIVE);
+    }
 
     currentGuidelineCategory = category;
 
@@ -573,8 +610,8 @@ function showGuideline(guidelineId) {
     if (guideline) {
         const html = `
             <h2>${guideline.title}</h2>
-            <p style="color: #6b7280; margin-bottom: 1rem;">${guideline.organization} • ${guideline.year}</p>
-            <div style="white-space: pre-wrap; line-height: 1.8;">${guideline.content}</div>
+            <p style="color:#94a3b8;margin-bottom:1rem">${guideline.organization} • ${guideline.year}</p>
+            <div style="white-space:pre-wrap;line-height:1.8;color:#cbd5e1">${guideline.content}</div>
         `;
         showModal(html);
     }
@@ -583,14 +620,14 @@ function showGuideline(guidelineId) {
 // Show diagnostic criteria
 async function showCriteria(disorder) {
     try {
-        const response = await fetch(`/api/criteria/${disorder}`);
+        const response = await fetch(`/api/criteria/${encodeURIComponent(disorder)}`);
         const data = await response.json();
 
         if (data.success && data.data) {
             const criteria = data.data;
             const html = `
                 <h2>${criteria.disorder}</h2>
-                <p style="color: #6b7280; margin-bottom: 1rem;">Code: ${criteria.code}</p>
+                <p style="color:#94a3b8;margin-bottom:1rem">Code: ${criteria.code}</p>
 
                 <h3>Diagnostic Criteria</h3>
                 <ol>
@@ -604,7 +641,7 @@ async function showCriteria(disorder) {
                     </ul>
                 ` : ''}
 
-                <p style="margin-top: 1.5rem; font-size: 0.875rem; color: #6b7280; font-style: italic;">
+                <p style="margin-top:1.5rem;font-size:0.875rem;color:#64748b;font-style:italic">
                     DSM-5 criteria for reference only. Not for diagnosis without clinical assessment.
                 </p>
             `;
@@ -657,15 +694,22 @@ function toggleCalc(calcId) {
     const card = document.querySelector(`[data-calc="${calcId}"]`);
     if (!card) return;
 
-    const isOpen = card.classList.contains('open');
-    container.querySelectorAll('.calc-card.open').forEach(openCard => {
-        openCard.classList.remove('open');
-        const btn = openCard.querySelector('[data-toggle]');
-        if (btn) btn.textContent = 'Open';
+    const body = card.querySelector('.calc-body');
+    const isOpen = !body.classList.contains('hidden');
+
+    // Close all open calculators
+    container.querySelectorAll('.calc-body').forEach(b => {
+        b.classList.add('hidden');
+        b.classList.remove('flex');
+    });
+    container.querySelectorAll('[data-toggle]').forEach(btn => {
+        btn.textContent = 'Open';
     });
 
+    // Open this one if it was closed
     if (!isOpen) {
-        card.classList.add('open');
+        body.classList.remove('hidden');
+        body.classList.add('flex');
         const btn = card.querySelector('[data-toggle]');
         if (btn) btn.textContent = 'Close';
     }
@@ -674,37 +718,37 @@ function toggleCalc(calcId) {
 function buildCalcCard(calc) {
     if (calc.type === 'external') {
         return `
-            <div class="calc-card" data-calc="${calc.id}">
-                <div class="calc-summary">
-                    <div class="calc-summary-text">
-                        <h3>${calc.title}</h3>
-                        <p class="card-meta">${calc.subtitle}</p>
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4" data-calc="${calc.id}">
+                <div class="flex justify-between items-start gap-3">
+                    <div class="flex flex-col gap-1">
+                        <h3 class="font-display text-base font-semibold text-white">${calc.title}</h3>
+                        <p class="text-sm text-slate-400">${calc.subtitle}</p>
                     </div>
-                    <a class="btn-primary" href="${calc.url}" target="_blank" rel="noopener">Open</a>
+                    <a class="px-3 py-1.5 bg-cyan-500 hover:bg-cyan-400 text-white rounded-xl font-semibold text-sm transition-colors whitespace-nowrap" href="${calc.url}" target="_blank" rel="noopener">Open</a>
                 </div>
-                <div class="calc-result show">Use the licensed external tool for item text and scoring.</div>
+                <div class="mt-3 p-3 bg-white/10 rounded-xl text-sm text-slate-300">Use the licensed external tool for item text and scoring.</div>
             </div>
         `;
     }
 
     if (calc.type === 'bmi') {
         return `
-            <div class="calc-card" data-calc="${calc.id}">
-                <div class="calc-summary">
-                    <div class="calc-summary-text">
-                        <h3>${calc.title}</h3>
-                        <p class="card-meta">${calc.subtitle}</p>
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4" data-calc="${calc.id}">
+                <div class="flex justify-between items-start gap-3">
+                    <div class="flex flex-col gap-1">
+                        <h3 class="font-display text-base font-semibold text-white">${calc.title}</h3>
+                        <p class="text-sm text-slate-400">${calc.subtitle}</p>
                     </div>
-                    <button class="calc-toggle" data-toggle>Open</button>
+                    <button class="px-3 py-1.5 rounded-xl border border-white/20 bg-white/10 hover:bg-white/20 font-semibold text-slate-300 whitespace-nowrap text-sm transition-colors" data-toggle>Open</button>
                 </div>
-                <div class="calc-body">
-                    <input type="number" class="calc-input" data-field="weight" placeholder="Weight (kg)" step="0.1">
-                    <input type="number" class="calc-input" data-field="height" placeholder="Height (cm)">
-                    <div class="calc-actions">
-                        <button class="btn-primary" data-action="bmi">Calculate</button>
-                        <button class="btn-secondary" data-reset>Reset</button>
+                <div class="calc-body hidden flex-col gap-3 mt-4">
+                    <input type="number" class="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/10 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-cyan-500/60" data-field="weight" placeholder="Weight (kg)" step="0.1">
+                    <input type="number" class="w-full px-4 py-2.5 rounded-xl border border-white/20 bg-white/10 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-cyan-500/60" data-field="height" placeholder="Height (cm)">
+                    <div class="flex gap-2">
+                        <button class="flex-1 px-4 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-white rounded-xl font-semibold text-sm transition-colors" data-action="bmi">Calculate</button>
+                        <button class="flex-1 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-slate-300 rounded-xl font-semibold text-sm transition-colors" data-reset>Reset</button>
                     </div>
-                    <div class="calc-result"></div>
+                    <div class="calc-result hidden p-3 bg-white/10 rounded-xl text-sm text-slate-300"></div>
                 </div>
             </div>
         `;
@@ -712,29 +756,29 @@ function buildCalcCard(calc) {
 
     const badges = [];
     if (calc.restrictedText) {
-        badges.push('<span class="badge warn">Licensed text</span>');
-        badges.push('<span class="badge warn">Placeholder items</span>');
+        badges.push('<span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">Licensed text</span>');
+        badges.push('<span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30">Placeholder items</span>');
     }
-    if (calc.note) badges.push('<span class="badge lock">Note</span>');
+    if (calc.note) badges.push('<span class="px-2 py-0.5 rounded-full text-xs font-semibold bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">Note</span>');
 
     return `
-        <div class="calc-card" data-calc="${calc.id}">
-            <div class="calc-summary">
-                <div class="calc-summary-text">
-                    <h3>${calc.title}</h3>
-                    <p class="card-meta">${calc.subtitle}</p>
-                    ${badges.length ? `<div class="calc-badges">${badges.join('')}</div>` : ''}
+        <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4" data-calc="${calc.id}">
+            <div class="flex justify-between items-start gap-3">
+                <div class="flex flex-col gap-1 min-w-0">
+                    <h3 class="font-display text-base font-semibold text-white">${calc.title}</h3>
+                    <p class="text-sm text-slate-400">${calc.subtitle}</p>
+                    ${badges.length ? `<div class="flex flex-wrap gap-1 mt-1">${badges.join('')}</div>` : ''}
                 </div>
-                <button class="calc-toggle" data-toggle>Open</button>
+                <button class="flex-shrink-0 px-3 py-1.5 rounded-xl border border-white/20 bg-white/10 hover:bg-white/20 font-semibold text-slate-300 whitespace-nowrap text-sm transition-colors" data-toggle>Open</button>
             </div>
-            <div class="calc-body">
-                <div class="calc-items">
+            <div class="calc-body hidden flex-col gap-3 mt-4">
+                <div class="flex flex-col">
                     ${buildCalcItems(calc)}
                 </div>
-                <div class="calc-actions">
-                    <button class="btn-secondary" data-reset>Reset</button>
+                <div class="flex gap-2">
+                    <button class="flex-1 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-slate-300 rounded-xl font-semibold text-sm transition-colors" data-reset>Reset</button>
                 </div>
-                <div class="calc-result"></div>
+                <div class="calc-result hidden p-3 bg-white/10 rounded-xl text-sm text-slate-300"></div>
             </div>
         </div>
     `;
@@ -744,9 +788,9 @@ function buildCalcItems(calc) {
     return calc.items.map((item, index) => {
         const options = buildCalcOptions(calc, item);
         return `
-            <div class="calc-row">
-                <div class="calc-label">${index + 1}. ${item.label}</div>
-                <select class="calc-select" data-score>
+            <div class="grid grid-cols-[1fr_auto] gap-3 items-center py-2 border-b border-white/10 last:border-0">
+                <div class="text-sm text-slate-300">${index + 1}. ${item.label}</div>
+                <select class="p-1.5 rounded-lg border border-white/20 bg-slate-800/80 text-white font-semibold text-xs w-28" data-score>
                     ${options}
                 </select>
             </div>
@@ -790,9 +834,9 @@ function updateCalc(calcId) {
 
     result.innerHTML = `
         <strong>Total:</strong> ${total}${interpretationText ? `<br><strong>Severity:</strong> ${interpretationText}` : ''}
-        ${calc.note ? `<div style="margin-top: 0.5rem; color: var(--muted); font-size: 0.75rem;">${calc.note}</div>` : ''}
+        ${calc.note ? `<div style="margin-top:0.5rem;color:#94a3b8;font-size:0.75rem">${calc.note}</div>` : ''}
     `;
-    result.classList.add('show');
+    result.classList.remove('hidden');
 }
 
 function resetCalc(calcId) {
@@ -806,7 +850,7 @@ function resetCalc(calcId) {
         input.value = '';
     });
     const result = card.querySelector('.calc-result');
-    if (result) result.classList.remove('show');
+    if (result) result.classList.add('hidden');
     updateCalc(calcId);
 }
 
@@ -819,8 +863,8 @@ function calculateBMI(calcId) {
     const resultDiv = card.querySelector('.calc-result');
 
     if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-        resultDiv.innerHTML = '<span style="color: #ef4444;">Please enter valid weight and height</span>';
-        resultDiv.classList.add('show');
+        resultDiv.innerHTML = '<span style="color:#f87171">Please enter valid weight and height</span>';
+        resultDiv.classList.remove('hidden');
         return;
     }
 
@@ -837,16 +881,16 @@ function calculateBMI(calcId) {
         <strong>BMI:</strong> ${bmi.toFixed(1)}<br>
         <strong>Category:</strong> ${interpretation}
     `;
-    resultDiv.classList.add('show');
+    resultDiv.classList.remove('hidden');
 }
 
-// Modal functions
+// Modal functions — uses hidden class instead of .show
 function showModal(html) {
     const modal = document.getElementById('modal');
     const modalBody = document.getElementById('modal-body');
 
     modalBody.innerHTML = html;
-    modal.classList.add('show');
+    modal.classList.remove('hidden');
 
     // Close on backdrop click
     modal.onclick = (e) => {
@@ -855,7 +899,7 @@ function showModal(html) {
 }
 
 function closeModal() {
-    document.getElementById('modal').classList.remove('show');
+    document.getElementById('modal').classList.add('hidden');
 }
 
 // Install prompt functions

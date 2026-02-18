@@ -87,10 +87,11 @@ router.get('/meds', (req, res) => {
   res.json({ success: true, data: medsCache });
 });
 
+// FIX: was .find() — now returns all matching meds
 router.get('/meds/search', (req, res) => {
   const query = (req.query.q || '').toLowerCase();
-  const med = medsCache.find(m => m.name.toLowerCase().includes(query));
-  res.json({ success: true, data: med || null });
+  const meds = medsCache.filter(m => m.name.toLowerCase().includes(query));
+  res.json({ success: true, data: meds });
 });
 
 router.get('/meds/class/:class', (req, res) => {
@@ -130,6 +131,10 @@ router.post('/calc/phq9', (req, res) => {
   const { score } = req.body;
   const s = parseInt(score);
 
+  if (isNaN(s) || s < 0 || s > 27) {
+    return res.status(400).json({ success: false, error: 'Score must be 0–27' });
+  }
+
   let interpretation;
   if (s <= 4) interpretation = 'None-minimal';
   else if (s <= 9) interpretation = 'Mild';
@@ -144,6 +149,10 @@ router.post('/calc/gad7', (req, res) => {
   const { score } = req.body;
   const s = parseInt(score);
 
+  if (isNaN(s) || s < 0 || s > 21) {
+    return res.status(400).json({ success: false, error: 'Score must be 0–21' });
+  }
+
   let interpretation;
   if (s <= 4) interpretation = 'Minimal';
   else if (s <= 9) interpretation = 'Mild';
@@ -154,8 +163,14 @@ router.post('/calc/gad7', (req, res) => {
 });
 
 router.post('/calc/bmi', (req, res) => {
-  const { weight, height } = req.body;
-  const bmi = (parseFloat(weight) / Math.pow(parseFloat(height) / 100, 2));
+  const weight = parseFloat(req.body.weight);
+  const height = parseFloat(req.body.height);
+
+  if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+    return res.status(400).json({ success: false, error: 'Weight and height must be positive numbers' });
+  }
+
+  const bmi = weight / Math.pow(height / 100, 2);
 
   let interpretation;
   if (bmi < 18.5) interpretation = 'Underweight';

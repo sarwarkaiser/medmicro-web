@@ -1,10 +1,10 @@
 // Service Worker for MedMicro PWA
-const CACHE_NAME = 'medmicro-v6';
+const CACHE_NAME = 'medmicro-v7';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/app.css?v=2026021305',
-  '/app.js?v=2026021305',
+  '/app.css?v=2026021701',
+  '/app.js?v=2026021701',
   '/manifest.json'
 ];
 

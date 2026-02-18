@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#114b5f">
+    <meta name="theme-color" content="#0891b2">
     <meta name="description" content="High-trust, low-noise medical utilities for residents">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,170 +17,214 @@
     <!-- iOS Safari -->
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/app.css?v=2026021305">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN (Play CDN — JIT in browser) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans:    ['Manrope', 'sans-serif'],
+                        display: ['Sora', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom animations & utilities not possible in Tailwind CDN alone -->
+    <link rel="stylesheet" href="/app.css?v=2026021701">
 </head>
-<body>
+<body class="bg-slate-950 text-white min-h-screen font-sans overflow-x-hidden">
+
+    <!-- Ambient background glow -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-cyan-600/20 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/3 -right-40 w-96 h-96 bg-teal-600/15 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-1/4 w-80 h-80 bg-cyan-800/10 rounded-full blur-3xl"></div>
+    </div>
+
     <!-- App Container -->
-    <div id="app">
+    <div id="app" class="relative z-10 max-w-5xl mx-auto px-4 py-6 pb-10 flex flex-col gap-5">
+
         <!-- Header -->
-        <header class="app-header">
-            <div class="header-content">
-                <h1>🏥 MedMicro</h1>
-                <p class="header-subtitle">Medical Reference for Residents</p>
+        <header class="relative overflow-hidden rounded-3xl shadow-2xl">
+            <div class="absolute inset-0 bg-gradient-to-br from-cyan-600 via-teal-700 to-slate-900"></div>
+            <div class="absolute inset-0 bg-white/5"></div>
+            <div class="absolute -right-16 -top-16 w-64 h-64 bg-white/10 rounded-full blur-2xl"></div>
+            <div class="relative z-10 p-7">
+                <h1 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mb-1">🏥 MedMicro</h1>
+                <p class="text-cyan-100/90 text-sm sm:text-base">Medical Reference for Residents</p>
             </div>
         </header>
 
         <!-- Search Bar -->
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search medications or guidelines..." class="search-input">
+        <div>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search medications or guidelines..."
+                class="w-full px-5 py-3.5 bg-white/10 border border-white/20 rounded-2xl text-white placeholder-slate-400 backdrop-blur-sm focus:outline-none focus:border-cyan-500/60 focus:bg-white/15 transition-all text-sm"
+            >
         </div>
 
         <!-- Navigation Tabs -->
-        <nav class="tabs">
-            <button class="tab active" data-tab="meds">
-                <span class="tab-icon">💊</span>
-                <span class="tab-label">Meds</span>
+        <nav class="flex gap-1.5 p-1.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl">
+            <button class="tab flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl font-semibold text-sm transition-all bg-cyan-500 text-white shadow-lg shadow-cyan-500/25" data-tab="meds">
+                <span>💊</span><span class="tab-label hidden sm:inline">Meds</span>
             </button>
-            <button class="tab" data-tab="guidelines">
-                <span class="tab-icon">📚</span>
-                <span class="tab-label">Guidelines</span>
+            <button class="tab flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl font-semibold text-sm transition-all text-slate-400 hover:text-slate-200 hover:bg-white/10" data-tab="guidelines">
+                <span>📚</span><span class="tab-label hidden sm:inline">Guidelines</span>
             </button>
-            <button class="tab" data-tab="criteria">
-                <span class="tab-icon">📋</span>
-                <span class="tab-label">Criteria</span>
+            <button class="tab flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl font-semibold text-sm transition-all text-slate-400 hover:text-slate-200 hover:bg-white/10" data-tab="criteria">
+                <span>📋</span><span class="tab-label hidden sm:inline">Criteria</span>
             </button>
-            <button class="tab" data-tab="calc">
-                <span class="tab-icon">🧮</span>
-                <span class="tab-label">Calc</span>
+            <button class="tab flex-1 flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl font-semibold text-sm transition-all text-slate-400 hover:text-slate-200 hover:bg-white/10" data-tab="calc">
+                <span>🧮</span><span class="tab-label hidden sm:inline">Calc</span>
             </button>
         </nav>
 
         <!-- Content Area -->
-        <main class="content">
+        <main class="flex flex-col gap-5">
+
             <!-- Medications Tab -->
-            <div id="meds-tab" class="tab-content active">
-                <div class="category-pills">
-                    <button class="pill active" data-class="all">All</button>
-                    <button class="pill" data-class="SSRI">SSRIs</button>
-                    <button class="pill" data-class="SNRI">SNRIs</button>
-                    <button class="pill" data-class="Antipsychotic">Antipsychotics</button>
-                    <button class="pill" data-class="Mood Stabilizer">Mood Stabilizers</button>
-                    <button class="pill" data-class="Benzodiazepine">Benzos</button>
-                    <button class="pill" data-class="Anxiolytic">Anxiolytics</button>
+            <div id="meds-tab" class="tab-content animate-rise">
+                <div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar mb-4">
+                    <button class="pill flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-cyan-500 text-white border-transparent" data-class="all">All</button>
+                    <button class="pill flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-white/10 text-slate-300 border-white/20 hover:bg-white/20" data-class="SSRI">SSRIs</button>
+                    <button class="pill flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-white/10 text-slate-300 border-white/20 hover:bg-white/20" data-class="SNRI">SNRIs</button>
+                    <button class="pill flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-white/10 text-slate-300 border-white/20 hover:bg-white/20" data-class="Antipsychotic">Antipsychotics</button>
+                    <button class="pill flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-white/10 text-slate-300 border-white/20 hover:bg-white/20" data-class="Mood Stabilizer">Mood Stabilizers</button>
+                    <button class="pill flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-white/10 text-slate-300 border-white/20 hover:bg-white/20" data-class="Benzodiazepine">Benzos</button>
+                    <button class="pill flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-white/10 text-slate-300 border-white/20 hover:bg-white/20" data-class="Anxiolytic">Anxiolytics</button>
                 </div>
-                <div id="meds-list" class="card-list">
-                    <div class="loading">Loading medications...</div>
+                <div id="meds-list" class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="text-center py-8 text-slate-400">Loading medications...</div>
                 </div>
             </div>
 
             <!-- Guidelines Tab -->
-            <div id="guidelines-tab" class="tab-content">
-                <div class="category-pills">
-                    <button class="pill active" data-category="">All</button>
-                    <button class="pill" data-category="depression">Depression</button>
-                    <button class="pill" data-category="bipolar">Bipolar</button>
-                    <button class="pill" data-category="schizophrenia">Schizophrenia</button>
-                    <button class="pill" data-category="anxiety">Anxiety</button>
+            <div id="guidelines-tab" class="tab-content hidden animate-rise">
+                <div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar mb-4">
+                    <button class="pill flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-cyan-500 text-white border-transparent" data-category="">All</button>
+                    <button class="pill flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-white/10 text-slate-300 border-white/20 hover:bg-white/20" data-category="depression">Depression</button>
+                    <button class="pill flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-white/10 text-slate-300 border-white/20 hover:bg-white/20" data-category="bipolar">Bipolar</button>
+                    <button class="pill flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-white/10 text-slate-300 border-white/20 hover:bg-white/20" data-category="schizophrenia">Schizophrenia</button>
+                    <button class="pill flex-shrink-0 px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-white/10 text-slate-300 border-white/20 hover:bg-white/20" data-category="anxiety">Anxiety</button>
                 </div>
-                <div id="guidelines-list" class="card-list">
-                    <div class="loading">Loading guidelines...</div>
+                <div id="guidelines-list" class="grid gap-3 sm:grid-cols-2">
+                    <div class="text-center py-8 text-slate-400">Loading guidelines...</div>
                 </div>
             </div>
 
             <!-- Criteria Tab -->
-            <div id="criteria-tab" class="tab-content">
-                <div class="card-list">
-                    <div class="criteria-card" data-disorder="Major Depressive Disorder">
-                        <h3>Major Depressive Disorder</h3>
-                        <p class="card-meta">DSM-5 Diagnostic Criteria</p>
+            <div id="criteria-tab" class="tab-content hidden animate-rise">
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <div class="criteria-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 cursor-pointer transition-all hover:bg-white/10 hover:border-white/20" data-disorder="Major Depressive Disorder">
+                        <h3 class="font-display text-base font-semibold text-white mb-1">Major Depressive Disorder</h3>
+                        <p class="text-sm text-slate-400">DSM-5 Diagnostic Criteria</p>
                     </div>
-                    <div class="criteria-card" data-disorder="Bipolar I Disorder">
-                        <h3>Bipolar I Disorder</h3>
-                        <p class="card-meta">DSM-5 Diagnostic Criteria</p>
+                    <div class="criteria-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 cursor-pointer transition-all hover:bg-white/10 hover:border-white/20" data-disorder="Bipolar I Disorder">
+                        <h3 class="font-display text-base font-semibold text-white mb-1">Bipolar I Disorder</h3>
+                        <p class="text-sm text-slate-400">DSM-5 Diagnostic Criteria</p>
                     </div>
-                    <div class="criteria-card" data-disorder="Schizophrenia">
-                        <h3>Schizophrenia</h3>
-                        <p class="card-meta">DSM-5 Diagnostic Criteria</p>
+                    <div class="criteria-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 cursor-pointer transition-all hover:bg-white/10 hover:border-white/20" data-disorder="Schizophrenia">
+                        <h3 class="font-display text-base font-semibold text-white mb-1">Schizophrenia</h3>
+                        <p class="text-sm text-slate-400">DSM-5 Diagnostic Criteria</p>
                     </div>
-                    <div class="criteria-card" data-disorder="Generalized Anxiety Disorder">
-                        <h3>Generalized Anxiety Disorder</h3>
-                        <p class="card-meta">DSM-5 Diagnostic Criteria</p>
+                    <div class="criteria-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 cursor-pointer transition-all hover:bg-white/10 hover:border-white/20" data-disorder="Generalized Anxiety Disorder">
+                        <h3 class="font-display text-base font-semibold text-white mb-1">Generalized Anxiety Disorder</h3>
+                        <p class="text-sm text-slate-400">DSM-5 Diagnostic Criteria</p>
                     </div>
-                    <div class="criteria-card" data-disorder="Panic Disorder">
-                        <h3>Panic Disorder</h3>
-                        <p class="card-meta">DSM-5 Diagnostic Criteria</p>
+                    <div class="criteria-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 cursor-pointer transition-all hover:bg-white/10 hover:border-white/20" data-disorder="Panic Disorder">
+                        <h3 class="font-display text-base font-semibold text-white mb-1">Panic Disorder</h3>
+                        <p class="text-sm text-slate-400">DSM-5 Diagnostic Criteria</p>
                     </div>
                 </div>
             </div>
 
             <!-- Calculators Tab -->
-            <div id="calc-tab" class="tab-content">
-                <div id="calc-tools" class="calc-grid">
-                    <div class="loading">Loading calculators...</div>
+            <div id="calc-tab" class="tab-content hidden animate-rise">
+                <div id="calc-tools" class="grid gap-3 sm:grid-cols-2">
+                    <div class="text-center py-8 text-slate-400">Loading calculators...</div>
                 </div>
             </div>
+
         </main>
 
-        <!-- Detail Modal -->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <button class="modal-close" onclick="closeModal()">&times;</button>
-                <div id="modal-body"></div>
-            </div>
-        </div>
-
-        <!-- Install Prompt -->
-        <div id="install-prompt" class="install-prompt hidden">
-            <div class="install-content">
-                <span>📱 Install MedMicro for offline access</span>
-                <button class="btn-install" id="install-button">Install</button>
-                <button class="btn-dismiss" onclick="dismissInstall()">×</button>
-            </div>
-        </div>
-
         <!-- Footer -->
-        <footer class="app-footer">
-            <div class="footer-content">
+        <footer class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 mt-2">
+            <div class="max-w-2xl mx-auto flex flex-col items-center gap-5 text-center">
                 <!-- Stats -->
-                <div class="footer-stats">
-                    <div class="footer-stat">
-                        <div class="footer-stat-value">34</div>
-                        <div>Medications</div>
+                <div class="flex gap-6 flex-wrap justify-center text-xs text-slate-400">
+                    <div class="flex flex-col items-center gap-0.5">
+                        <span class="text-xl font-bold text-cyan-400">34</span>
+                        <span>Medications</span>
                     </div>
-                    <div class="footer-stat">
-                        <div class="footer-stat-value">14</div>
-                        <div>Guidelines</div>
+                    <div class="flex flex-col items-center gap-0.5">
+                        <span class="text-xl font-bold text-cyan-400">14</span>
+                        <span>Guidelines</span>
                     </div>
-                    <div class="footer-stat">
-                        <div class="footer-stat-value">5</div>
-                        <div>DSM-5 Criteria</div>
+                    <div class="flex flex-col items-center gap-0.5">
+                        <span class="text-xl font-bold text-cyan-400">5</span>
+                        <span>DSM-5 Criteria</span>
                     </div>
-                    <div class="footer-stat">
-                        <div class="footer-stat-value">3</div>
-                        <div>Calculators</div>
+                    <div class="flex flex-col items-center gap-0.5">
+                        <span class="text-xl font-bold text-cyan-400">13</span>
+                        <span>Calculators</span>
                     </div>
                 </div>
 
-                <!-- Buy Me a Coffee Button -->
-                <a href="https://www.buymeacoffee.com/sarwar66" target="_blank" rel="noopener" class="btn-coffee">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <!-- Buy Me a Coffee -->
+                <a href="https://www.buymeacoffee.com/sarwar66" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 px-5 py-2.5 bg-yellow-400 hover:bg-yellow-300 text-slate-900 rounded-full font-semibold text-sm shadow-lg shadow-yellow-400/20 transition-all hover:-translate-y-0.5">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-1.001-1.379-.197-.069-.42-.098-.57-.241-.152-.143-.196-.366-.231-.572-.065-.378-.125-.756-.192-1.133-.057-.325-.102-.69-.25-.987-.195-.4-.597-.634-.996-.788a5.723 5.723 0 00-.626-.194c-1.397-.35-2.828-.514-4.257-.558-1.43-.043-2.862.034-4.257.558-.197.075-.421.15-.626.194-.399.154-.801.388-.996.788-.148.297-.193.662-.25.987-.067.377-.127.755-.192 1.133-.035.206-.079.429-.231.572-.15.143-.373.172-.57.241-.613.216-.882.781-1.001 1.379l-.132.666c-.09.448-.054.906.105 1.33.16.424.42.801.759 1.095.338.294.744.513 1.176.633.433.12.889.138 1.33.052l.252-.047c.119 2.308.883 4.532 2.169 6.393 1.286 1.861 3.042 3.275 5.052 4.062.5.196 1.02.343 1.548.438.527.095 1.062.138 1.597.127.535-.011 1.067-.07 1.588-.176.52-.106 1.028-.259 1.511-.457 2.01-.787 3.766-2.201 5.052-4.062 1.286-1.861 2.05-4.085 2.169-6.393l.252.047c.441.086.897.068 1.33-.052.432-.12.838-.339 1.176-.633.339-.294.599-.671.759-1.095.159-.424.195-.882.105-1.33z"/>
                     </svg>
                     Buy Me a Coffee
                 </a>
 
-                <!-- Footer Text -->
-                <div class="footer-text">
-                    <p><strong>MedMicro PWA</strong> - Evidence-based psychiatric reference for medical professionals</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.75rem;">Offline-capable • Installable • Open Source</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.75rem;">&copy; 2025 MedMicro. All content for educational purposes.</p>
+                <div class="text-slate-500 text-xs leading-relaxed">
+                    <p class="font-semibold text-slate-400 mb-1">MedMicro PWA</p>
+                    <p>Evidence-based psychiatric reference for medical professionals</p>
+                    <p class="mt-1">Offline-capable • Installable • Open Source</p>
+                    <p class="mt-1">&copy; 2025 MedMicro. All content for educational purposes.</p>
                 </div>
             </div>
         </footer>
+
+    </div>
+
+    <!-- Detail Modal -->
+    <div id="modal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-900/95 border border-white/10 w-full max-w-2xl max-h-[85vh] rounded-2xl p-6 overflow-y-auto relative shadow-2xl animate-rise">
+            <button
+                class="sticky top-0 float-right w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-slate-400 hover:text-white text-xl transition-colors"
+                onclick="closeModal()"
+            >&times;</button>
+            <div id="modal-body" class="clear-both pt-3"></div>
+        </div>
+    </div>
+
+    <!-- Install Prompt -->
+    <div id="install-prompt" class="hidden fixed bottom-5 left-4 right-4 z-50">
+        <div class="bg-gradient-to-r from-cyan-600 to-teal-700 text-white px-4 py-3 rounded-2xl shadow-2xl">
+            <div class="flex items-center justify-between gap-3 max-w-xl mx-auto">
+                <span class="text-sm">📱 Install MedMicro for offline access</span>
+                <div class="flex items-center gap-2 flex-shrink-0">
+                    <button class="px-3 py-1.5 bg-white text-cyan-700 rounded-lg font-semibold text-sm" id="install-button">Install</button>
+                    <button class="text-white/80 hover:text-white text-2xl leading-none" onclick="dismissInstall()">×</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Scripts -->
-    <script src="/app.js?v=2026021305"></script>
+    <script src="/app.js?v=2026021701"></script>
 </body>
 </html>
