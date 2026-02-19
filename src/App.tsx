@@ -5,11 +5,11 @@ import { MedicationDetailPage } from './pages/MedicationDetailPage';
 import { GuidelinesPage } from './pages/GuidelinesPage';
 import { CriteriaPage } from './pages/CriteriaPage';
 import { InteractionsPage } from './pages/InteractionsPage';
+import { CalculatorsPage } from './pages/CalculatorsPage';
 import { FavoritesPage } from './pages/FavoritesPage';
 import { RecentPage } from './pages/RecentPage';
-import { useMedications } from './hooks/useMedications';
-import { useGuidelines } from './hooks/useMedications';
-import { useCriteria } from './hooks/useMedications';
+import { SettingsPage } from './pages/SettingsPage';
+import { useMedications, useGuidelines, useCriteria } from './hooks/useMedications';
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -76,12 +76,20 @@ function Router({ currentPath }: { currentPath: string }) {
     return <InteractionsPage medications={medications} />;
   }
 
+  if (currentPath === '/calculators') {
+    return <CalculatorsPage />;
+  }
+
   if (currentPath === '/favorites') {
     return <FavoritesPage medications={medications} guidelines={guidelines} criteria={criteria} />;
   }
 
   if (currentPath === '/recent') {
     return <RecentPage medications={medications} guidelines={guidelines} criteria={criteria} />;
+  }
+
+  if (currentPath === '/settings') {
+    return <SettingsPage />;
   }
 
   // Default to medications page
