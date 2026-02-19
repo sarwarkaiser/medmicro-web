@@ -10,9 +10,14 @@ import { FavoritesPage } from './pages/FavoritesPage';
 import { RecentPage } from './pages/RecentPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { useMedications, useGuidelines, useCriteria } from './hooks/useMedications';
+import { useNavigationShortcuts } from './hooks/useKeyboardShortcuts';
+import { DetailPageSkeleton } from './components/Skeleton';
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+  // Enable keyboard shortcuts for navigation
+  useNavigationShortcuts();
 
   useEffect(() => {
     const handlePopState = () => setCurrentPath(window.location.pathname);
@@ -55,6 +60,11 @@ function Router({ currentPath }: { currentPath: string }) {
   // Extract ID from path
   const medMatch = currentPath.match(/^\/medications\/(.+)$/);
   const medId = medMatch ? medMatch[1] : null;
+
+  // Show skeleton for medication detail page while loading
+  if (medId && medsLoading) {
+    return <DetailPageSkeleton />;
+  }
 
   if (currentPath === '/' || currentPath === '/medications') {
     return <MedicationsPage medications={medications} loading={medsLoading} />;
